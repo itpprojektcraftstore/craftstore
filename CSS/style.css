@@ -1,49 +1,18 @@
-#popup{
-	display:none;
-	width:100%;
-	height:100%;
-	top:0;
-	position:fixed;
-	opacity:.8;
-	background-color:#777777;
-	overflow:auto;
+ 
+#btnReg, #btnLog{
+	margin: 8px 25px 8px 5px;  
+	background-color: white;
+	color: rgb(51,122,183);
 }
 
-div#register{
-	display:none;
-	position:absolute;
-	top:25%;
-	left:50%;
-	margin-left:-100px;	
+.btn-div{
+	margin-right: 1em;
 }
 
-div#login{
-	display:none;
-	position:absolute;
-	top:25%;
-	left:50%;
-	margin-left:-100px;
+.navbar{
+	height:30px;
 }
 
-img#close{
-	position:absolute;
-	width:25px;
-	height:25px;
-	right:-10px;
-	top:-10px;
-	cursor:pointer;
-}
-
-form{
-	max-width:300px;
-	background-color:white;
-	padding:1em;
-	border-radius:10px;
-}
-
-input{
-	margin:.5em;
-}
-body{
-	background-color: lightsteelblue;
+.header{
+	margin: 80px 5% 5% 5%; 
 }
