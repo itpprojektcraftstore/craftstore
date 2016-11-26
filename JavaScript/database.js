@@ -1,6 +1,6 @@
  $(document).ready(function(){
     $("#bt_login").click(function(){ login(); });
-    $("#bt_delete").click(function(){ deleteUser(); });
+    //$("#bt_delete").click(function(){ deleteUser(); });
     $("#bt_register").click(function(){ register(); });
 });
 
@@ -47,6 +47,7 @@ function login() {
     });
 }
 
+/*
 function deleteUser() {
     var request = $.ajax({
         url: "PHP/delete.php",
@@ -59,3 +60,4 @@ function deleteUser() {
         document.getElementById("output_login").innerHTML = "";     
     });
 }
+*/

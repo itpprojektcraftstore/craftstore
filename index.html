@@ -22,23 +22,25 @@
 	<link type="text/css" rel="stylesheet" href="CSS/style.css">
 	<script language="javascript" type="text/javascript" src="JavaScript/popup.js"></script>
 	<script type="text/javascript" src="JavaScript/database.js"></script>
-
+	<script type="text/javascript" src="JavaScript/modal-description-length.js"></script>
 	<!-- CraftStore icon -->
 	<link rel="icon" href="Images/website_img/icon.png">
 </head>
 
 <body>
 
-	<nav class="navbar navbar-fixed-top navbar-dark bg-primary">
-		<a class="navbar-brand" rel="home" href="#" title="CraftStore">
-			<img style="max-width:100px;" src="Images/website_img/logo.png">
-		</a>
-		<div class="btn-div pull-right">
-			<button class="btn" id="btnReg" data-target="#registration" data-toggle="modal" type="button">Registrieren</button>
-			<button class="btn" id="btnLog" data-target="#login" data-toggle="modal" type="button">Login</button>
+	<nav class="navbar navbar-fixed-top bg-primary">
+		<div class="container-fluid">
+			<a class="navbar-brand" rel="home" href="#" title="CraftStore">
+				<img id="navbarlogo" style="max-width:100px;" src="Images/website_img/logo.png">
+			</a>
+			<img id="navbarlogo2" style="max-width:100px;" src="Images/website_img/icon2.png">
+			<div class="btn-div pull-right ">
+				<button class="btn whitebluebutton" id="btnReg" data-target="#registration" data-toggle="modal" type="button">Registrieren</button>
+				<button class="btn whitebluebutton" id="btnLog" data-target="#login" data-toggle="modal" type="button">Login</button>
+			</div>
 		</div>
 	</nav>
-
 
 	<!-- popup for login -->
 	<div class="modal fade" id="login" role="dialog">
@@ -55,7 +57,7 @@
 					<div class="form-group">
 						<input type="email" class="form-control" id="tb_email_login" placeholder="E-Mail"><br>
 						<input type="password" class="form-control" id="tb_pw_login" placeholder="Passwort"><br>
-						<button type="button" class="btn btn-default" id="bt_login" data-dismiss="modal" value="Login">Login</button>
+						<button type="button" class="btn bluewhitebutton" id="bt_login" data-dismiss="modal" value="Login">Login</button>
 					</div>
 				</div>
 
@@ -82,38 +84,31 @@
 						<input type="password" class="form-control" id="tb_pw_register" placeholder="Passwort" /><br>
 						<input type="text" class="form-control" id="tb_address_register" placeholder="Adresse" /><br>
 						<input type="text" class="form-control" id="tb_phone_register" placeholder="Telefonnummer" /><br>
-						<input type="text" class="form-control" id="tb_description_register" placeholder="Profilbeschreibung" /><br>
-						<button type="button" class="btn btn-default" id="bt_register" data-dismiss="modal" value="Registrieren">Registrieren</button>
+						<textarea onkeydown="setlength()" onkeyup="setlength()" onkeypress="setlength()" class="form-control desc" rows="3" maxlength="250"
+							id="tb_description_register" placeholder="Profilbeschreibung" required></textarea>
+						<p id="descr_length" class="pull-right">0/250</p>
+						<button type="button" class="btn bluewhitebutton" id="bt_register" data-dismiss="modal" value="Registrieren">Registrieren</button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-
-
-
 	<div class="container-fluid header">
 		<div class="jumbotron">
 			<div class="dropdown">
-				<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+				<button class="btn btn-secondary dropdown-toggle" type="button" id="categoriedropdown" data-toggle="dropdown" aria-haspopup="true"
 					aria-expanded="false">
-						Dropdown
+						Kategorien <span class="caret"></span>
 				</button>
-				<div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-					<a class="dropdown-item" href="#">Action</a>
+				<!-- kategorien-->
+				<div class="dropdown-menu" aria-labelledby="categoriedropdown">
+					<a class="dropdown-item" href="#">Action</a><br>
 					<a class="dropdown-item" href="#">Another action</a>
 				</div>
 			</div>
-
 		</div>
 	</div>
-
-
-
-
-
-
 </body>
 
 </html>

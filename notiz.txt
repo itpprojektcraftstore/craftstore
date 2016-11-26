@@ -1,0 +1,4 @@
+26.11.2016 ZECEVIC
+- Buttons - logo angepasst --> wenn das fenster auf minimum verkleiner wird -> logo ändert sich
+- kategorien --> dropdownmenue erstellt
+- textlänge der profilbeschreibung wird in einer "textbox" darunter angezeit --> max länge auf 250 gesetzt (vorschlag)

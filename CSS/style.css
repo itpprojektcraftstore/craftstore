@@ -1,18 +1,73 @@
  
-#btnReg, #btnLog{
-	margin: 8px 25px 8px 5px;  
+.whitebluebutton{
+	margin: 8px 0px 8px 1px;  
 	background-color: white;
 	color: rgb(51,122,183);
+	font-weight: bold;
 }
 
-.btn-div{
-	margin-right: 1em;
+.bluewhitebutton{
+	margin: 8px 0px 8px 1px;  
+	background-color: rgb(51,122,183);
+	color: white;
+	font-weight: bold;
 }
 
-.navbar{
-	height:30px;
+#descr_length{
+	margin-top:0px;
+
 }
+
+#btnReg{
+	width: 60%; 
+}
+
+#btnLog{
+	width: 35%;
+}
+
+#bt_login,#bt_register{
+	width: 100%;
+}
+
+.jumbotron{
+	padding: 2%;
+}
+
+#categoriedropdown{
+	width: 100%; 	
+	background-color: rgb(51,122,183);
+	color: white;
+	font-weight: bold;
+	font-size: 150%;
+}
+
+.icon-bar .navbar-toggle .navbar-inverse{
+	background-color: rgb(51,122,183);
+	border-color: rgb(51,122,183);
+}
+
 
 .header{
 	margin: 80px 5% 5% 5%; 
+}
+ 
+
+@media only screen and (max-width: 365px) {
+	
+	#navbarlogo{
+		display: none;
+	}
+	
+	#navbarlogo2{
+		 width: 35px;
+		 height: 35px; 
+		 margin-top:2%;
+	}	 
+}
+
+@media only screen and (min-width: 365px) {
+	 #navbarlogo2{
+		 display: none;
+	 }
 }
