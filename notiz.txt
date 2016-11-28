@@ -9,3 +9,4 @@ bei login -> fehlermeldung wenn login fehlgeschlagen, wenn erfolgreich --> leere
 -->button ändern sich auf LOGOUT/EINSTELLUNGEN
 navbarbtnonclickfunction.js erstellt --> checkt welcher button gecklickt wurde Login,Logtout,...
 Logoutbutton -> setzt buttons auf reg/login zurück
+alert bei registrierung hinzugefügt --> wenn erfolgreich ausgeben 
