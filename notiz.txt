@@ -2,3 +2,10 @@
 - Buttons - logo angepasst --> wenn das fenster auf minimum verkleiner wird -> logo ändert sich
 - kategorien --> dropdownmenue erstellt
 - textlänge der profilbeschreibung wird in einer "textbox" darunter angezeit --> max länge auf 250 gesetzt (vorschlag)
+
+_____________
+28.11.2016 ZECEVIC
+bei login -> fehlermeldung wenn login fehlgeschlagen, wenn erfolgreich --> leeren der eingaben
+-->button ändern sich auf LOGOUT/EINSTELLUNGEN
+navbarbtnonclickfunction.js erstellt --> checkt welcher button gecklickt wurde Login,Logtout,...
+Logoutbutton -> setzt buttons auf reg/login zurück

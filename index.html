@@ -18,9 +18,10 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
 		crossorigin="anonymous"></script>
-	
+
 	<link type="text/css" rel="stylesheet" href="CSS/style.css">
 	<script type="text/javascript" src="JavaScript/database.js"></script>
+	<script type="text/javascript" src="JavaScript/navbarbtnonclickfunction.js"></script>
 	<script type="text/javascript" src="JavaScript/modal-description-length.js"></script>
 	<!-- CraftStore icon -->
 	<link rel="icon" href="Images/website_img/icon.png">
@@ -35,14 +36,14 @@
 			</a>
 			<img id="navbarlogo2" style="max-width:100px;" src="Images/website_img/icon2.png">
 			<div class="btn-div pull-right ">
-				<button class="btn whitebluebutton" id="btnReg" data-target="#registration" data-toggle="modal" type="button">Registrieren</button>
-				<button class="btn whitebluebutton" id="btnLog" data-target="#login" data-toggle="modal" type="button">Login</button>
+				<button onclick="buttonclick(this.innerHTML)" class="btn whitebluebutton" id="navbarbtn1"  data-toggle="modal" type="button">Registrieren</button>
+				<button onclick="buttonclick(this.innerHTML)"  class="btn whitebluebutton" id="navbarbtn2" data-toggle="modal" type="button">Login</button>
 			</div>
 		</div>
 	</nav>
 
 	<!-- popup for login -->
-	<div class="modal fade" id="login" role="dialog">
+	<div class="modal fade" id="loginmodal" role="dialog">
 		<div class="modal-dialog">
 
 			<!-- Modal content-->
@@ -56,16 +57,18 @@
 					<div class="form-group">
 						<input type="email" class="form-control" id="tb_email_login" placeholder="E-Mail"><br>
 						<input type="password" class="form-control" id="tb_pw_login" placeholder="Passwort"><br>
-						<button type="button" class="btn bluewhitebutton" id="bt_login" data-dismiss="modal" value="Login">Login</button>
+						<button type="button" class="btn bluewhitebutton" id="bt_login" value="Login">Login</button>
+					</div>
+					<div class="alert alert-danger collapse" role="alert" id="loginfailedalert">
+						<strong>Fehler!</strong> Versuchen Sie es noch einmal.
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</div>
 
 	<!-- popup for registration -->
-	<div class="modal fade" id="registration" role="dialog">
+	<div class="modal fade" id="registrationmodal" role="dialog">
 		<div class="modal-dialog">
 
 			<!-- Modal content-->
