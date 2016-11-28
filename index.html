@@ -60,7 +60,7 @@
 						<button type="button" class="btn bluewhitebutton" id="bt_login" value="Login">Login</button>
 					</div>
 					<div class="alert alert-danger collapse" role="alert" id="loginfailedalert">
-						<strong>Fehler!</strong> Versuchen Sie es noch einmal.
+						<strong>Login fehlgeschlagen!</strong> Versuchen Sie es noch einmal.
 					</div>
 				</div>
 			</div>
@@ -89,15 +89,23 @@
 						<textarea onkeydown="setlength()" onkeyup="setlength()" onkeypress="setlength()" class="form-control desc" rows="3" maxlength="250"
 							id="tb_description_register" placeholder="Profilbeschreibung" required></textarea>
 						<p id="descr_length" class="pull-right">0/250</p>
-						<button type="button" class="btn bluewhitebutton" id="bt_register" data-dismiss="modal" value="Registrieren">Registrieren</button>
+						<button type="button" class="btn bluewhitebutton" id="bt_register" value="Registrieren">Registrieren</button>
+						
+						<div class="alert alert-danger collapse" role="alert" id="registrationfailedalert">
+							<strong>Registrieren  fehlgeschlagen!</strong> Versuchen Sie es noch einmal.
+						</div>
+						<div class="alert alert-success collapse" role="alert" id="registrationsuccessalert">
+							<strong>Sie haben sich erfolgreich registriert!</strong>
+						</div>
+					
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="container-fluid header">
-		<div class="jumbotron">
+	<div class="container header">
+		
 			<div class="dropdown">
 				<button class="btn btn-secondary dropdown-toggle" type="button" id="categoriedropdown" data-toggle="dropdown" aria-haspopup="true"
 					aria-expanded="false">
@@ -109,7 +117,7 @@
 					<a class="dropdown-item" href="#">Another action</a>
 				</div>
 			</div>
-		</div>
+		
 	</div>
 </body>
 

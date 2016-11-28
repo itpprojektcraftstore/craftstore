@@ -20,13 +20,24 @@ function register() {
     });
     request.done(function (response, textStatus, jqXHR) {
         console.log(response);
-        if (response == "true") {
-            document.getElementById("output_register").innerHTML = "Sie haben sich erfolgreich registriert!";
+        if (response == "false") {
+            $("#registrationfailedalert").show();
         }
         else {
-            document.getElementById("output_register").innerHTML = "Registrierung fehlgeschlagen!<br>Username und/oder Email ist leider schon vergeben!";
+            $("#registrationfailedalert").hide();
+            $("#registrationsuccessalert").show()
+            setTimeout(function () {
+                $("#registrationmodal").modal("hide");
+                $("#registrationsuccessalert").hide();
+                document.getElementById("tb_user_register").value = "";
+                document.getElementById("tb_name_register").value = "";
+                document.getElementById("tb_email_register").value = "";
+                document.getElementById("tb_pw_register").value = "";
+                document.getElementById("tb_address_register").value = "";
+                document.getElementById("tb_phone_register").value = "";
+                document.getElementById("tb_description_register").value = "";
+            }, 1500);
         }
-        document.getElementById("output_login").innerHTML = "";
     });
 }
 
@@ -47,15 +58,14 @@ function login() {
         console.log(response);
         if (response == "false") {
             $("#loginfailedalert").show();
-
         }
         else {
             $("#loginmodal").modal("hide");
             $("#loginfailedalert").hide();
-            document.getElementById("tb_pw_login").value="";
-            document.getElementById("tb_email_login").value="";
-            document.getElementById("navbarbtn1").innerHTML="Einstellungen";
-            document.getElementById("navbarbtn2").innerHTML="Logout";
+            document.getElementById("tb_pw_login").value = "";
+            document.getElementById("tb_email_login").value = "";
+            document.getElementById("navbarbtn1").innerHTML = "Einstellungen";
+            document.getElementById("navbarbtn2").innerHTML = "Logout";
         }
     });
 }

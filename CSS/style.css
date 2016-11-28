@@ -1,5 +1,4 @@
- 
-.whitebluebutton{
+ .whitebluebutton{
 	margin: 8px 0px 8px 1px;  
 	background-color: white;
 	color: rgb(51,122,183);
@@ -18,11 +17,15 @@
 
 }
 
-#btnnavbar1{
+
+
+#navbarbtn1{
+	padding: 8px;
 	width: 60%; 
 }
 
-#btnnavbar2{
+#navbarbtn2{
+	padding: 8px;
 	width: 35%;
 }
 
@@ -51,7 +54,7 @@
 .header{
 	margin: 80px 5% 5% 5%; 
 }
- 
+
 
 @media only screen and (max-width: 365px) {
 	
