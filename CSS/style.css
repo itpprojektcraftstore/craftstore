@@ -1,92 +1,92 @@
- .whitebluebutton{
-	margin: 8px 0px 8px 1px;  
-	background-color: white;
-	color: rgb(51,122,183);
-	font-weight: bold;
-}
-
-.bluewhitebutton{
-	margin: 8px 0px 8px 1px;  
-	background-color: rgb(51,122,183);
-	color: white;
-	font-weight: bold;
-}
-
-#descr_length{
-	margin-top:0px;
-
-}
-
-.bluewhitebuttoncat{
-	margin:4px;  
-	background-color: rgb(51,122,183);
-	color: white;
-	width:98%;
-	font-weight: bold;
-	font-size:100%;
-}
-
-.dropdown-menu{
-	margin: 0px 0px 0px 0px;
-	height:100% auto;
-	width:100%;
-}
-
-
-
-#navbarbtn1{
-	padding: 8px;
-	width: 105px; 
-}
-
-#navbarbtn2{
-	padding: 8px;
-	width: 65px;
-}
-
-#bt_login,#bt_register{
-	width: 100%;
-}
-
-.jumbotron{
-	padding: 2%;
-}
-
-#categoriedropdown{
-	width: 100%; 	
-	background-color: rgb(51,122,183);
-	color: white;
-	font-weight: bold;
-	font-size: 150%;
-}
-
-
-.icon-bar .navbar-toggle .navbar-inverse{
-	background-color: rgb(51,122,183);
-	border-color: rgb(51,122,183);
-}
-
-
-.header{
-	margin: 80px 5% 5% 5%; 
-}
-
-
-@media only screen and (max-width: 365px) {
-	
-	#navbarlogo{
-		display: none;
+	 .whitebluebutton{
+		margin: 8px 0px 8px 1px;  
+		background-color: white;
+		color: rgb(51,122,183);
+		font-weight: bold;
 	}
-	
-	#navbarlogo2{
-		 width: 35px;
-		 height: 35px; 
-		 margin-top:2%;
-	}	 
-}
 
-@media only screen and (min-width: 365px) {
-	 #navbarlogo2{
-		 display: none;
-	 }
-}
+	.bluewhitebutton{
+		margin: 8px 0px 8px 1px;  
+		background-color: rgb(51,122,183);
+		color: white;
+		font-weight: bold;
+	}
+
+	#descr_length{
+		margin-top:0px;
+
+	}
+
+	.bluewhitebuttoncat{
+		background-color: rgb(51,122,183);
+		color: white;
+		width:98%;
+		font-weight: bold;
+		font-size:100%;	
+		margin-top:5px;
+		margin-bottom:5px;
+	}
+
+	.dropdown-menu{
+		margin: 0px 0px 0px 0px;
+		height:auto;
+		width:100%;
+	}
+
+	#navbarbtn1{
+		padding: 8px;
+		width: 105px; 
+	}
+
+	#navbarbtn2{
+		padding: 8px;
+		width: 65px;
+	}
+
+	#bt_login,#bt_register{
+		width: 100%;
+	}
+
+	
+
+	#categoriedropdown{
+		width: 100%; 	
+		background-color: rgb(51,122,183); 
+		color: white;
+		font-weight: bold;
+		font-size: 150%;	
+	}
+
+
+	.icon-bar .navbar-toggle .navbar-inverse{
+		background-color: rgb(51,122,183);
+		border-color: rgb(51,122,183);
+	}
+
+	.row{
+		margin: 0px 1% 0px 1%;
+	}
+
+	.header{
+		margin: 80px 5% 5% 5%; 
+	}
+
+
+	@media only screen and (max-width: 365px) {
+
+		#navbarlogo{
+			display: none;
+		}
+
+		#navbarlogo2{
+			 width: 35px;
+			 height: 35px; 
+			 margin-top:2%;
+		}	 
+	}
+
+	@media only screen and (min-width: 365px) {
+		 #navbarlogo2{
+			 display: none;
+		 }
+	}
