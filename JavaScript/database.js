@@ -1,6 +1,5 @@
 $(document).ready(function () {
     $("#bt_login").click(function () { login(); });
-    //$("#bt_delete").click(function(){ deleteUser(); });
     $("#bt_register").click(function () { register(); });
 });
 
@@ -69,18 +68,3 @@ function login() {
         }
     });
 }
-
-/*
-function deleteUser() {
-    var request = $.ajax({
-        url: "PHP/delete.php",
-        type: "post",
-        data: { email: document.getElementById("tb_email_register").value }
-    });
-    request.done(function (response, textStatus, jqXHR) {
-        console.log(response);
-        document.getElementById("output_register").innerHTML = "Löschen abgeschlossen!";
-        document.getElementById("output_login").innerHTML = "";     
-    });
-}
-*/

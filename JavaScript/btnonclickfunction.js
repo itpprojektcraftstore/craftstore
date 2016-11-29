@@ -17,3 +17,7 @@ function buttonclick(value)
         $("#registrationmodal").modal("show");
     }
 }
+
+function categorieclick(value){
+    //
+}

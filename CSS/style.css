@@ -17,6 +17,20 @@
 
 }
 
+.bluewhitebuttoncat{
+	margin:4px;  
+	background-color: rgb(51,122,183);
+	color: white;
+	width:98%;
+	font-weight: bold;
+	font-size:100%;
+}
+
+.dropdown-menu{
+	margin: 0px 0px 0px 0px;
+	height:100% auto;
+	width:100%;
+}
 
 
 #navbarbtn1{

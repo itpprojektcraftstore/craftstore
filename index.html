@@ -23,7 +23,7 @@
 	<link type="text/css" rel="stylesheet" href="CSS/upload.css">
 	<script type="text/javascript" src="JavaScript/database.js"></script>
 	<script type="text/javascript" src="JavaScript/upload.js"></script>
-	<script type="text/javascript" src="JavaScript/navbarbtnonclickfunction.js"></script>
+	<script type="text/javascript" src="JavaScript/btnonclickfunction.js"></script>
 	<script type="text/javascript" src="JavaScript/modal-description-length.js"></script>
 	<!-- CraftStore icon -->
 	<link rel="icon" href="Images/website_img/icon.png">
@@ -38,8 +38,8 @@
 			</a>
 			<img id="navbarlogo2" style="max-width:100px;" src="Images/website_img/icon2.png">
 			<div class="btn-div pull-right ">
-				<button onclick="buttonclick(this.innerHTML)" class="btn whitebluebutton" id="navbarbtn1"  data-toggle="modal" type="button">Registrieren</button>
-				<button onclick="buttonclick(this.innerHTML)"  class="btn whitebluebutton" id="navbarbtn2" data-toggle="modal" type="button">Login</button>
+				<button onclick="buttonclick(this.innerHTML)" class="btn whitebluebutton" id="navbarbtn1" data-toggle="modal" type="button">Registrieren</button>
+				<button onclick="buttonclick(this.innerHTML)" class="btn whitebluebutton" id="navbarbtn2" data-toggle="modal" type="button">Login</button>
 			</div>
 		</div>
 	</nav>
@@ -92,14 +92,14 @@
 							id="tb_description_register" placeholder="Profilbeschreibung" required></textarea>
 						<p id="descr_length" class="pull-right">0/250</p>
 						<button type="button" class="btn bluewhitebutton" id="bt_register" value="Registrieren">Registrieren</button>
-						
+
 						<div class="alert alert-danger collapse" role="alert" id="registrationfailedalert">
 							<strong>Registrieren  fehlgeschlagen!</strong> Versuchen Sie es noch einmal.
 						</div>
 						<div class="alert alert-success collapse" role="alert" id="registrationsuccessalert">
 							<strong>Sie haben sich erfolgreich registriert!</strong>
 						</div>
-					
+
 					</div>
 				</div>
 			</div>
@@ -107,39 +107,75 @@
 	</div>
 
 	<div class="container header">
-		
-			<div class="dropdown">
-				<button class="btn btn-secondary dropdown-toggle" type="button" id="categoriedropdown" data-toggle="dropdown" aria-haspopup="true"
-					aria-expanded="false">
+
+		<div class="dropdown">
+			<button class="btn btn-secondary dropdown-toggle" type="button" id="categoriedropdown" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false">
 						Kategorien <span class="caret"></span>
 				</button>
-				<!-- kategorien-->
-				<div class="dropdown-menu" aria-labelledby="categoriedropdown">
-					<a class="dropdown-item" href="#">Action</a><br>
-					<a class="dropdown-item" href="#">Another action</a>
+			<!-- kategorien-->
+			<div class="dropdown-menu" aria-labelledby="categoriedropdown">
+				<!--<div class="form-inline">-->
+
+				<div class="row">
+					<div class="col-xs-12 col-md-4">
+						<a onclick="categorieclick(this.innerHTML)" class="btn bluewhitebuttoncat">Alle Kategorien</a>
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<a onclick="categorieclick(this.innerHTML)" class="btn bluewhitebuttoncat">Kleidung</a>
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<a onclick="categorieclick(this.innerHTML)" class="btn bluewhitebuttoncat">Schmuck</a>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xs-12 col-md-4">
+						<a onclick="categorieclick(this.innerHTML)" class="btn bluewhitebuttoncat">Taschen</a>
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<a onclick="categorieclick(this.innerHTML)" class="btn bluewhitebuttoncat">Kunst</a>
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<a onclick="categorieclick(this.innerHTML)" class="btn bluewhitebuttoncat">Geschirr</a>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xs-12 col-md-4">
+						<a onclick="categorieclick(this.innerHTML)" class="btn bluewhitebuttoncat">Dekoration</a>
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<a onclick="categorieclick(this.innerHTML)" class="btn bluewhitebuttoncat">Handwerk</a>
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<a onclick="categorieclick(this.innerHTML)" class="btn bluewhitebuttoncat">Sonstiges</a>
+					</div>
 				</div>
 			</div>
-			
-			<div id="div_upload">
-				<h1>Image Upload</h1>
-				<form id="form_upload" method="post" enctype="multipart/form-data">
-					<div id="div_preview"><img id="img_preview" /></div>
-					<!--<input type="file" name="file" id="file" required />-->
-					<div id="div_upload_buttons">
-						<label class="btn btn-default btn-file" >
+		</div>
+	</div>
+
+	<div id="div_upload">
+		<h1>Image Upload</h1>
+		<form id="form_upload" method="post" enctype="multipart/form-data">
+			<div id="div_preview"><img id="img_preview" /></div>
+			<!--<input type="file" name="file" id="file" required />-->
+			<div id="div_upload_buttons">
+				<label class="btn btn-default btn-file">
 							Browse...
 							<input type="file" name="file" id="file" required>
 						</label>
-						<input type="submit" class="btn btn-default" value="Upload" />
-					</div>
-				</form>
+				<input type="submit" class="btn btn-default" value="Upload" />
 			</div>
-			<div class="alert alert-success collapse" role="alert" id="uploadsuccessalert">
-				<strong>Upload erfolgreich!</strong>
-			</div>
-			<div class="alert alert-info collapse" role="alert" id="uploadinfoalert">
-				<strong>Bitte warten...</strong>
-			</div>
+		</form>
+	</div>
+	<div class="alert alert-success collapse" role="alert" id="uploadsuccessalert">
+		<strong>Upload erfolgreich!</strong>
+	</div>
+	<div class="alert alert-info collapse" role="alert" id="uploadinfoalert">
+		<strong>Bitte warten...</strong>
+	</div>
 	</div>
 
 </body>
