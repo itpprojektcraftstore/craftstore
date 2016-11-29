@@ -22,8 +22,8 @@
 	}
 
 	.bluewhitebuttoncat{
-		background-color: rgb(51,122,183);
-		color: white;
+		background-color: white;
+		color: rgb(51,122,183);
 		width:98%;
 		font-weight: bold;
 		font-size:100%;	
@@ -36,6 +36,7 @@
 	}
 
 	.dropdown-menu{
+		background-color: rgb(51,122,183);
 		margin: 0px 0px 0px 0px;
 		height:auto;
 		width:100%;
