@@ -33,14 +33,15 @@
 }
 
 
+
 #navbarbtn1{
 	padding: 8px;
-	width: 60%; 
+	width: 105px; 
 }
 
 #navbarbtn2{
 	padding: 8px;
-	width: 35%;
+	width: 65px;
 }
 
 #bt_login,#bt_register{
@@ -58,6 +59,7 @@
 	font-weight: bold;
 	font-size: 150%;
 }
+
 
 .icon-bar .navbar-toggle .navbar-inverse{
 	background-color: rgb(51,122,183);
