@@ -30,6 +30,10 @@
 		margin-top:5px;
 		margin-bottom:5px;
 	}
+	
+	.bg-primary{
+		background:white;
+	}
 
 	.dropdown-menu{
 		margin: 0px 0px 0px 0px;
@@ -41,12 +45,17 @@
 		padding: 8px;
 		width: 105px; 
 	}
+	
+	.btn-div{
+		margin-top:1%;
+	}
 
 	#navbarbtn2{
 		padding: 8px;
 		width: 65px;
-	}
-	
+		border: 1px;
+		border-color: rgb(51,122,183);
+	}	
 
 	#bt_login,#bt_register{
 		width: 100%;
@@ -58,7 +67,8 @@
 		background-color: rgb(51,122,183); 
 		color: white;
 		font-weight: bold;
-		font-size: 150%;	
+		font-size: 150%;
+		margin: 0 0 10px 0;	
 	}
 
 	.icon-bar .navbar-toggle .navbar-inverse{
@@ -71,6 +81,8 @@
 	}
 
 	.categories{
+		background-color: rgb(51,122,183);
+		padding-top:10px;
 		width:100%;
 	}
 
@@ -84,7 +96,7 @@
 		#navbarlogo2{
 			 width: 35px;
 			 height: 35px; 
-			 margin-top:2%;
+			 margin-top:5%;
 		}	 
 	}
 
