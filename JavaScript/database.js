@@ -63,7 +63,7 @@ function login() {
             $("#loginfailedalert").hide();
             document.getElementById("tb_pw_login").value = "";
             document.getElementById("tb_email_login").value = "";
-            document.getElementById("navbarbtn1").innerHTML = "Einstellungen";
+            document.getElementById("navbarbtn1").innerHTML = "Profil";
             document.getElementById("navbarbtn2").innerHTML = "Logout";
         }
     });

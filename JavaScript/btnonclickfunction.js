@@ -4,7 +4,7 @@ function buttonclick(value)
         document.getElementById("navbarbtn1").innerHTML="Registrieren";
         document.getElementById("navbarbtn2").innerHTML="Login";
     }
-    else if(value=="Einstellungen")
+    else if(value=="Profil")
     {
         console.log("test");
     }
