@@ -16,6 +16,10 @@ function buttonclick(value)
     {        
         $("#registrationmodal").modal("show");
     }
+    else if(value=="Upload")
+    {
+        $("#uploadmodal").modal("show");
+    }
 }
 
 function categorieclick(value){
