@@ -44,7 +44,7 @@
 
 	#navbarbtn1{
 		padding: 8px;
-		width: 105px; 
+		width: 100px; 
 	}
 	
 	.btn-div{
@@ -98,6 +98,7 @@
 			 width: 35px;
 			 height: 35px; 
 			 margin-top:5%;
+			 margin-left:0;
 		}	 
 	}
 

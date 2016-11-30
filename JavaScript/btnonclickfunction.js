@@ -22,12 +22,16 @@ function buttonclick(value)
         var main = document.getElementsByTagName("main")[0];
         main.innerHTML = "<input type=\"image\" src=\"Images/website_img/uploadbtn.png\" onclick=\"buttonclick('Upload');\" data-toggle=\"modal\" height=\"100px\" width=\"100px\" >";
         main.innerHTML += "<button type=\"button\" class=\"btn bluewhitebutton\" onclick=\"buttonclick('Delete_Account');\" style=\"margin: 0px 0px 90px 60px;\">Account löschen</button>";
-        document.getElementById("navbarbtn1").innerHTML="Produkte";
+        var navb1= document.getElementById("navbarbtn1");
+        navb1.innerHTML="Meine Produkte";
+        navb1.style.width = "130px";
     }
-    else if(value=="Produkte")
+    else if(value=="Meine Produkte")
     {
         generateMain();
-        document.getElementById("navbarbtn1").innerHTML="Profil";
+        var navb1= document.getElementById("navbarbtn1");
+        navb1.innerHTML="Profil";
+        navb1.style.width = "100px"; 
     }
     else if(value=="Login")
     {        
