@@ -14,7 +14,8 @@
 		background-color: rgb(51,122,183);
 		color: white;
 		font-weight: bold;
-	} 
+	}
+ 
 
 	#descr_length{
 		margin-top:0px;
@@ -44,7 +45,7 @@
 
 	#navbarbtn1{
 		padding: 8px;
-		width: 100px; 
+		width: 105px; 
 	}
 	
 	.btn-div{
@@ -98,7 +99,6 @@
 			 width: 35px;
 			 height: 35px; 
 			 margin-top:5%;
-			 margin-left:0;
 		}	 
 	}
 

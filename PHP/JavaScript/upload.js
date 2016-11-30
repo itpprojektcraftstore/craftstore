@@ -1,8 +1,6 @@
 
 $(document).ready(function () {
 
-    generateMain();
-
     //File-Upload
     $("#form_upload").submit(function() {
 
@@ -21,6 +19,7 @@ $(document).ready(function () {
         request.done(function (response, textStatus, jqXHR) {
             timestamp_end = new Date();
             time = (timestamp_end - timestamp_start) / 1000;
+            console.log(response);
             console.log(time+"s");
             $("#uploadinfoalert").hide();
             $("#uploadsuccessalert").show();
@@ -40,30 +39,12 @@ $(document).ready(function () {
     });
 });
 
+    
+
+
 function imageIsLoaded(e) {
     $("#div_preview").css("border","none");
     $('#img_preview').attr('src', e.target.result);
     $('#img_preview').attr('width', '250px');
     $('#img_preview').attr('height', '230px');
-}
-
-function generateMain() {
-    var request = $.ajax({
-        url: "PHP/getProducts.php",
-        type: "post"
-    });
-    request.done(function (response, textStatus, jqXHR) {
-        var dataArray = response.split('|');
-        var repeat = (dataArray.length-1)/2;
-
-        content = "<div class=\"row\">";
-        for (i = 0; i < repeat; i++) {
-            content += "<div class=\"col-xs-12 col-sm-6 col-md-4\">";
-            content += ("<img src=\"Uploads/"+(dataArray[i*2])+"/"+(dataArray[i*2+1])+"\" class=\"pics_main\">");
-            content += "</div>"
-        }
-        content += "</div>"
-        document.getElementsByTagName("main")[0].innerHTML = content;
-    });
-    
 }
