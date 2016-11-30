@@ -21,6 +21,7 @@ function register() {
         }
     });
     request.done(function (response, textStatus, jqXHR) {
+        console.log(response);
         if (response == "false") {
             $("#registrationfailedalert").show();
         }
@@ -54,6 +55,7 @@ function login() {
         }
     });
     request.done(function (response, textStatus, jqXHR) {
+        console.log(response);
         if (response == "false") {
             $("#loginfailedalert").show();
         }
@@ -64,7 +66,6 @@ function login() {
             document.getElementById("tb_email_login").value = "";
             document.getElementById("navbarbtn1").innerHTML = "Profil";
             document.getElementById("navbarbtn2").innerHTML = "Logout";
-            generateMain();
         }
     });
 }
@@ -92,6 +93,7 @@ function delete_account() {
         }
     });
     request.done(function (response, textStatus, jqXHR) {
+        console.log(response);
         if (response == "false") {
             $("#deleteaccountsuccessalert").show();
         }
@@ -102,7 +104,7 @@ function delete_account() {
             document.getElementById("tb_email_delete").value = "";
             document.getElementById("navbarbtn1").innerHTML = "Registrieren";
             document.getElementById("navbarbtn2").innerHTML = "Login";
-            generateMain();
+            document.getElementsByTagName("main")[0].innerHTML = "";
         }
     });
 }

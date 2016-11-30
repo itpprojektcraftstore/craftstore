@@ -37,8 +37,7 @@ main {
 }
 
 .pics_main {
-    height: 300px;
-    width: 300px;
-    border-radius: 150px;
-    margin-bottom: 80px;
+    height: 250px;
+    width: 250px;
+    border-radius: 1250px;
 }
