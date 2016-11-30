@@ -3,6 +3,9 @@
     height: 230px;
     border: 1px solid;
     position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
 }
 
 #img_preview {
@@ -16,6 +19,10 @@
     margin-top: 30px;
     margin-left: 1px;
     float: left;
+}
+
+#bt_browse,#bt_upload{
+	width: 49%;
 }
 
 #div_upload_buttons {
