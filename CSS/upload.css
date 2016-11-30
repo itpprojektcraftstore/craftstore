@@ -28,8 +28,10 @@
 
 #uploadsuccessalert, #uploadinfoalert{
     margin-top: -190px;
-    margin-left: 290px;
-    float: left;
+    position:absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
 }
 
 main {
