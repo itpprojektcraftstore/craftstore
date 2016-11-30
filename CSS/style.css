@@ -15,6 +15,7 @@
 		color: white;
 		font-weight: bold;
 	}
+ 
 
 	#descr_length{
 		margin-top:0px;
@@ -26,7 +27,7 @@
 		color: rgb(51,122,183);
 		width:98%;
 		font-weight: bold;
-		font-size:100%;	
+		font-size:110%;	
 		margin-top:5px;
 		margin-bottom:5px;
 	}

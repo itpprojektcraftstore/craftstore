@@ -1,10 +1,11 @@
-var timestamp_start, timestamp_end, time;
 
-$(document).ready(function() {
+$(document).ready(function () {
 
+    //File-Upload
     $("#form_upload").submit(function() {
 
         $("#uploadinfoalert").show();
+        var timestamp_start, timestamp_end, time;
         timestamp_start = new Date();
 
         var request = $.ajax({
@@ -24,17 +25,22 @@ $(document).ready(function() {
             $("#uploadsuccessalert").show();
             setTimeout(function () {
                 $("#uploadsuccessalert").hide();
-            }, 3000);
+                $("#uploadmodal").modal("hide");
+            }, 1500);
         });
         return false;
     });
 
+    //File-Preview
     $("#file").change(function() {
         var reader = new FileReader();
         reader.onload = imageIsLoaded;
         reader.readAsDataURL(this.files[0]);
     });
 });
+
+    
+
 
 function imageIsLoaded(e) {
     $("#div_preview").css("border","none");
