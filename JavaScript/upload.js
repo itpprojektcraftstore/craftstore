@@ -2,10 +2,10 @@
 $(document).ready(function () {
 
     generateMain();
-
+    
     //File-Upload
     $("#form_upload").submit(function() {
-
+        console.log("submit");
         $("#uploadinfoalert").show();
         var timestamp_start, timestamp_end, time;
         timestamp_start = new Date();
@@ -44,7 +44,7 @@ function imageIsLoaded(e) {
     $("#div_preview").css("border","none");
     $('#img_preview').attr('src', e.target.result);
     $('#img_preview').attr('width', '250px');
-    $('#img_preview').attr('height', '230px');
+    $('#img_preview').attr('height', '250px');
 }
 
 function generateMain() {
@@ -65,5 +65,4 @@ function generateMain() {
         content += "</div>"
         document.getElementsByTagName("main")[0].innerHTML = content;
     });
-    
 }

@@ -20,8 +20,12 @@ function buttonclick(value)
     else if(value=="Profil")
     {
         var main = document.getElementsByTagName("main")[0];
-        main.innerHTML = "<input type=\"image\" src=\"Images/website_img/uploadbtn.png\" onclick=\"buttonclick('Upload');\" data-toggle=\"modal\" height=\"100px\" width=\"100px\" >";
-        main.innerHTML += "<button type=\"button\" class=\"btn bluewhitebutton\" onclick=\"buttonclick('Delete_Account');\" style=\"margin: 0px 0px 90px 60px;\">Account löschen</button>";
+        
+        //ladet .html-Datei vom File und pusht es ins main
+        $.get('profil.html', function(data) {            
+            main.innerHTML=data;
+        });
+
         var navb1= document.getElementById("navbarbtn1");
         navb1.innerHTML="Meine Produkte";
         navb1.style.width = "130px";
