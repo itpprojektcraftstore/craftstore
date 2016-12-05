@@ -1,6 +1,6 @@
 #div_preview {
     width: 250px;
-    height: 230px;
+    height: 250px;
     border: 1px solid;
     position: absolute;
     left: 0;
@@ -31,7 +31,7 @@
 }
 
 #div_upload_buttons {
-    padding-top: 260px;
+    padding-top: 280px;
 }
 
 #file {
