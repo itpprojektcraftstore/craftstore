@@ -6,6 +6,7 @@
     left: 0;
     right: 0;
     margin: 0 auto;
+    margin-top: 20px
 }
 
 #img_preview {
@@ -25,8 +26,12 @@
 	width: 49%;
 }
 
+#bt_profilbild{
+    width: 100%;
+}
+
 #div_upload_buttons {
-    padding-top: 240px;
+    padding-top: 260px;
 }
 
 #file {

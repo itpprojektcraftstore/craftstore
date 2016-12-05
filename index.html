@@ -142,6 +142,14 @@
 						<textarea onkeydown="setlength()" onkeyup="setlength()" onkeypress="setlength()" class="form-control desc" rows="3" maxlength="250"
 							id="tb_description_register" placeholder="Profilbeschreibung" required></textarea>
 						<p id="descr_length" class="pull-right">0/250</p>
+						<div id="div_preview"><img id="img_preview" /></div>
+							<div id="div_upload_buttons">
+								<label class="btn btn-default btn-file" id="bt_profilbild">
+									Profilbild auswählen...
+									<input type="file" name="file" id="file" required>
+								</label>
+							</div>
+
 						<button type="button" class="btn bluewhitebutton" id="bt_register" value="Registrieren">Registrieren</button>
 
 						<div class="alert alert-danger collapse" role="alert" id="registrationfailedalert">
