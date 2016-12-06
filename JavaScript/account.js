@@ -2,6 +2,13 @@
 $(document).ready(function () {
     isLoggedin();
     $("#bt_login").click(function () { login(); });
+
+   $('#tb_pw_login').on('keypress', function (e) {
+         if(e.which === 13){
+             login();
+         }
+   });
+
     $("#bt_register").click(function () { register(); });
     $("#bt_delete_account").click(function () { delete_account(); });
 });
