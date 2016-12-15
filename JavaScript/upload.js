@@ -27,6 +27,7 @@ $(document).ready(function () {
             setTimeout(function () {
                 $("#uploadsuccessalert").hide();
                 $("#uploadmodal").modal("hide");
+                resetPreview();
             }, 1500);
         });
         return false;
@@ -45,6 +46,11 @@ function imageIsLoaded(e) {
     $(" #img_preview ").attr('src', e.target.result);
     $(" #img_preview ").attr('width', '250px');
     $(" #img_preview ").attr('height', '250px');
+}
+
+function resetPreview() {
+    $(" #div_preview ").css("border", "1px solid");
+    $(" #img_preview ").attr('src', '');
 }
 
 function generateMain() {
