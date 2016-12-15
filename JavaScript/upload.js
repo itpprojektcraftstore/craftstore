@@ -1,5 +1,5 @@
 
-$(document).ready(function () {
+jQuery(function ($) {
 
     generateMain();
 
@@ -35,15 +35,13 @@ $(document).ready(function () {
 
     //File-Preview
     $(" #file ").change(function () {
-        var reader = new FileReader();
-        reader.onload = imageIsLoaded;
-        reader.readAsDataURL(this.files[0]);
+        imageIsLoaded(URL.createObjectURL(this.files[0]));
     });
 });
 
-function imageIsLoaded(e) {
+function imageIsLoaded(url) {
     $(" #div_preview ").css("border", "none");
-    $(" #img_preview ").attr('src', e.target.result);
+    $(" #img_preview ").attr('src', url);
     $(" #img_preview ").attr('width', '250px');
     $(" #img_preview ").attr('height', '250px');
 }
