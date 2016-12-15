@@ -24,6 +24,7 @@ function buttonclick(value)
         //ladet .html-Datei vom File und pusht es ins main
         $.get('profil.html', function(data) {            
             main.innerHTML=data;
+            generateProfil(function(){});
         });
 
         var navb1= document.getElementById("navbarbtn1");
@@ -52,6 +53,9 @@ function buttonclick(value)
     else if(value=="Delete_Account")
     {
         $("#deleteaccountmodal").modal("show");
+    }
+    else if(value=="Change_Profilbild") {
+        $("#profilbildmodal").modal("show");
     }
 }
 
