@@ -14,6 +14,8 @@
 	if($username != "") { // if input data are correct
         $query = "DELETE FROM user WHERE Email = '$email'";
 		mysqli_query($db_connect, $query);
+		$query = "DELETE FROM produkte WHERE Username = '$username'";
+		mysqli_query($db_connect, $query);
 
 		del_dir();
 		
