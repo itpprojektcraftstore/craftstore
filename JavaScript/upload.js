@@ -33,7 +33,7 @@ $(document).ready(function () {
     });
 
     //File-Preview
-    $("#file").change(function() {
+    $(" #file ").change(function() {
         var reader = new FileReader();
         reader.onload = imageIsLoaded;
         reader.readAsDataURL(this.files[0]);
@@ -41,10 +41,10 @@ $(document).ready(function () {
 });
 
 function imageIsLoaded(e) {
-    $("#div_preview").css("border","none");
-    $('#img_preview').attr('src', e.target.result);
-    $('#img_preview').attr('width', '250px');
-    $('#img_preview').attr('height', '250px');
+    $(" #div_preview ").css("border","none");
+    $(" #img_preview ").attr('src', e.target.result);
+    $(" #img_preview ").attr('width', '250px');
+    $(" #img_preview ").attr('height', '250px');
 }
 
 function generateMain() {
