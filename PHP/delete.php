@@ -23,6 +23,7 @@
 
 		echo "true";
     }
+
 	mysqli_close($db_connect);
 	exit();
 
