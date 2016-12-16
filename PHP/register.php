@@ -29,9 +29,7 @@
 
         echo "true";
     }
-    else {
-        echo "false";
-    }
+    
 	mysqli_close($db_connect);
 	exit();
 ?>

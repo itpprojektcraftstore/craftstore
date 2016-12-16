@@ -27,8 +27,12 @@ function register() {
         }
     });
     request.done(function (response, textStatus, jqXHR) {
-        if (response == "false") {
+        console.log(response);
+        if (response != "true") {
             $("#registrationfailedalert").show();
+            setTimeout(function () {
+                $("#registrationfailedalert").hide();
+            }, 3000);
         }
         else {
             $("#registrationfailedalert").hide();
@@ -45,7 +49,7 @@ function register() {
                 document.getElementById("tb_description_register").value = "";
                 document.getElementById("navbarbtn1").innerHTML = "Profil";
                 document.getElementById("navbarbtn2").innerHTML = "Logout";
-            }, 1500);
+            }, 1000);
         }
     });
 }
@@ -62,15 +66,22 @@ function login() {
     request.done(function (response, textStatus, jqXHR) {
         if (response == "false") {
             $("#loginfailedalert").show();
+            setTimeout(function () {
+                $("#loginfailedalert").hide();
+            }, 3000);
         }
         else {
-            $("#loginmodal").modal("hide");
             $("#loginfailedalert").hide();
-            document.getElementById("tb_pw_login").value = "";
-            document.getElementById("tb_email_login").value = "";
-            document.getElementById("navbarbtn1").innerHTML = "Profil";
-            document.getElementById("navbarbtn2").innerHTML = "Logout";
-            generateMain();
+            $("#loginsuccessalert").show();
+            setTimeout(function () {
+                $("#loginmodal").modal("hide");
+                $("#loginsuccessalert").hide();
+                document.getElementById("tb_pw_login").value = "";
+                document.getElementById("tb_email_login").value = "";
+                document.getElementById("navbarbtn1").innerHTML = "Profil";
+                document.getElementById("navbarbtn2").innerHTML = "Logout";
+                generateMain();
+            }, 500);
         }
     });
 }
@@ -98,17 +109,25 @@ function delete_account() {
         }
     });
     request.done(function (response, textStatus, jqXHR) {
-        if (response == "false") {
-            $("#deleteaccountsuccessalert").show();
+        console.log(response);
+        if (response != "true") {
+            $("#deleteaccountfailedalert").show();
+            setTimeout(function () {
+                $("#deleteaccountfailedalert").hide();
+            }, 3000);
         }
         else {
-            $("#deleteaccountmodal").modal("hide");
-            $("#deleteaccountsuccessalert").hide();
-            document.getElementById("tb_pw_delete").value = "";
-            document.getElementById("tb_email_delete").value = "";
-            document.getElementById("navbarbtn1").innerHTML = "Registrieren";
-            document.getElementById("navbarbtn2").innerHTML = "Login";
-            generateMain();
+            $("#deleteaccountfailedalert").hide();
+            $("#deleteaccountsuccessalert").show();
+            setTimeout(function () {
+                $("#deleteaccountmodal").modal("hide");
+                $("#deleteaccountsuccessalert").hide();
+                document.getElementById("tb_pw_delete").value = "";
+                document.getElementById("tb_email_delete").value = "";
+                document.getElementById("navbarbtn1").innerHTML = "Registrieren";
+                document.getElementById("navbarbtn2").innerHTML = "Login";
+                generateMain();
+            }, 500);
         }
     });
 }

@@ -41,9 +41,6 @@ function register() {
 }
 
 function login() {
-
-
-
     var request = $.ajax({
         url: "PHP/login.php",
         type: "post",

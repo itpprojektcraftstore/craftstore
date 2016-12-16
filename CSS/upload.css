@@ -1,4 +1,4 @@
-#div_preview {
+.div_preview {
     width: 250px;
     height: 250px;
     border: 1px solid;
@@ -9,7 +9,7 @@
     margin-top: 20px;
 }
 
-#img_preview {
+.img_preview {
     position: absolute;
 }
 
@@ -22,7 +22,7 @@
     float: left;
 }
 
-#bt_browse,#bt_upload{
+#bt_browse,#bt_upload,#bt_browse_profilbild,#bt_upload_profilbild{
 	width: 49%;
 }
 
@@ -30,11 +30,11 @@
     width: 100%;
 }
 
-#div_upload_buttons {
+.div_upload_buttons {
     padding-top: 280px;
 }
 
-#file {
+#file, #file_profilbild {
     display: none;
 }
 
@@ -55,4 +55,13 @@ main {
     width: 300px;
     border-radius: 150px;
     margin-bottom: 80px;
+}
+
+#profilbeschreibung {
+    margin-bottom: 50px;
+}
+
+#profilbild {
+    width: 200px;
+    height: 200px;
 }

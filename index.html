@@ -114,6 +114,9 @@
 					<div class="alert alert-danger collapse" role="alert" id="loginfailedalert">
 						<strong>Login fehlgeschlagen!</strong> Versuchen Sie es noch einmal.
 					</div>
+					<div class="alert alert-success collapse" role="alert" id="loginsuccessalert">
+						<strong>Sie haben sich erfolgreich registriert!</strong>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -141,13 +144,6 @@
 						<textarea onkeydown="setlength()" onkeyup="setlength()" onkeypress="setlength()" class="form-control desc" rows="3" maxlength="250"
 							id="tb_description_register" placeholder="Profilbeschreibung" required></textarea>
 						<p id="descr_length" class="pull-right">0/250</p>
-						<div id="div_preview"><img id="img_preview" /></div>
-							<div id="div_upload_buttons">
-								<label class="btn btn-default btn-file" id="bt_profilbild">
-									Profilbild auswählen...
-									<input type="file" name="file" id="file" required>
-								</label>
-							</div>
 
 						<button type="button" class="btn bluewhitebutton" id="bt_register" value="Registrieren">Registrieren</button>
 
@@ -184,8 +180,8 @@
 				<div class="modal-body">
 					<div>
 						<form id="form_upload" method="post" enctype="multipart/form-data">
-							<div id="div_preview"><img id="img_preview" /></div>
-							<div id="div_upload_buttons">
+							<div id="div_preview" class="div_preview"><img id="img_preview" class="img_preview" /></div>
+							<div class="div_upload_buttons">
 								<label class="btn btn-default btn-file" id="bt_browse">
 									Browse...
 									<input type="file" name="file" id="file" required>
@@ -224,6 +220,38 @@
 						</div>
 						<div class="alert alert-success collapse" role="alert" id="deleteaccountsuccessalert">
 							<strong>Erfolgreich gelöscht!</strong>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--popup für Profilbild ändern-->
+	<div class="modal fade" id="profilbildmodal" role="dialog">
+		<div class="modal-dialog">
+			
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Profilbild ändern</h4>
+				</div>
+
+				<div class="modal-body">
+					<div>
+						<form id="form_upload_profilbild" method="post" enctype="multipart/form-data">
+							<div id="div_preview_profilbild" class="div_preview"><img id="img_preview_profilbild" class="img_preview"/></div>
+							<div class="div_upload_buttons">
+								<label class="btn btn-default btn-file" id="bt_browse_profilbild">
+									Browse...
+									<input type="file" name="file_profilbild" id="file_profilbild" required>
+								</label>
+								<input type="submit" class="btn btn-default" value="Upload" id="bt_upload_profilbild" />
+							</div>
+						</form>
+						<div class="alert alert-success collapse" role="alert" id="profilbildsuccessalert">
+							<strong>Erfolgreich geändert!</strong>
 						</div>
 					</div>
 				</div>
