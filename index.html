@@ -175,12 +175,28 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Upload</h4>
+					<h4 class="modal-title">Neues Produkt hochladen</h4>
 				</div>
 
 				<div class="modal-body">
 					<div>
 						<form id="form_upload" method="post" enctype="multipart/form-data">
+							<input type="text" class="form-control" id="tb_product_name" placeholder="Produkt Name" /><br>
+							<select class="custom-select" id="tb_product_category">
+								<option selected>Kategorie auswählen</option>
+								<option value="Kleidung">Kleidung</option>
+								<option value="Schmuck">Schmuck</option>
+								<option value="Taschen">Taschen</option>
+								<option value="Kunst">Kunst</option>
+								<option value="Geschirr">Geschirr</option>
+								<option value="Dekoration">Dekoration</option>
+								<option value="Handwerk">Handwerk</option>
+								<option value="Sonstiges">Sonstiges</option>
+							</select>
+							<input type="text" class="form-control" id="tb_product_price" placeholder="Preis (€)" /><br>
+							<textarea onkeydown="setlength()" onkeyup="setlength()" onkeypress="setlength()" class="form-control desc" rows="3" maxlength="250"
+								id="tb_product_description" placeholder="Produktbeschreibung" required></textarea>
+							<p id="descr_length" class="pull-right">0/250</p>
 							<div id="div_preview" class="div_preview"><img id="img_preview" class="img_preview" /></div>
 							<div class="div_upload_buttons">
 								<label class="btn btn-default btn-file" id="bt_browse">
