@@ -19,6 +19,10 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
 		crossorigin="anonymous"></script>
 
+	<!-- Bootstrap-select Plugin -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.min.js"></script>
+
 	<link type="text/css" rel="stylesheet" href="CSS/style.css">
 	<link type="text/css" rel="stylesheet" href="CSS/upload.css">
 	<script type="text/javascript" src="JavaScript/upload.js"></script>
@@ -182,16 +186,16 @@
 					<div>
 						<form id="form_upload" method="post" enctype="multipart/form-data">
 							<input type="text" class="form-control" id="tb_product_name" placeholder="Produkt Name" /><br>
-							<select class="form-control" id="tb_product_category">
+							<select class="selectpicker" id="tb_product_category" data-show-icon="true">
 								<option selected>Kategorie auswählen</option>
-								<option value="Kleidung"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Kleidung</option>
-								<option value="Schmuck"><span class="glyphicon glyphicon-sunglasses" aria-hidden="true"></span> Schmuck</option>
-								<option value="Taschen"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Taschen</option>
-								<option value="Kunst"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> Kunst</option>
-								<option value="Geschirr"><span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span> Geschirr</option>
-								<option value="Dekoration"><span class="glyphicon glyphicon-lamp" aria-hidden="true"></span> Dekoration</option>
-								<option value="Handwerk"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Handwerk</option>
-								<option value="Sonstiges"><span class="glyphicon glyphicon-option-horizontal center" aria-hidden="true"></span> Sonstiges</option>
+								<option value="Kleidung" data-icon="glyphicon-user">Kleidung</option>
+								<option value="Schmuck" data-icon="glyphicon-sunglasses">Schmuck</option>
+								<option value="Taschen" data-icon="glyphicon-briefcase">Taschen</option>
+								<option value="Kunst" data-icon="glyphicon-picture">Kunst</option>
+								<option value="Geschirr" data-icon="glyphicon-cutlery">Geschirr</option>
+								<option value="Dekoration" data-icon="glyphicon-lamp">Dekoration</option>
+								<option value="Handwerk" data-icon="glyphicon-wrench">Handwerk</option>
+								<option value="Sonstiges" data-icon="glyphicon-option-horizontal center">Sonstiges</option>
 							</select> <br>
 							<input type="text" class="form-control" id="tb_product_price" placeholder="Preis (€)" /><br>
 							<textarea onkeydown="setlength()" onkeyup="setlength()" onkeypress="setlength()" class="form-control desc" rows="3" maxlength="250"
