@@ -32,7 +32,7 @@ function register() {
             $("#registrationfailedalert").show();
             setTimeout(function () {
                 $("#registrationfailedalert").hide();
-            }, 3000);
+            }, 3000); 
         }
         else {
             $("#registrationfailedalert").hide();
