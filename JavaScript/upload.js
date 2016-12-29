@@ -131,6 +131,6 @@ function generateProfil() {
         document.getElementById("telefonnummer").innerHTML = "Telefonnummer: "+dataArray[4];
         document.getElementById("profilbeschreibung").innerHTML = "Profilbeschreibung: "+dataArray[5];
         console.log("hallo");
-        $(" #profilbild ").attr('src', 'Uploads/'+dataArray[0]+'/'+dataArray[6]+dataArray[7]);       
+        $(" #profilbild ").attr('src', 'Uploads/'+dataArray[0]+'/ProfilProfilProfilbild'+dataArray[7]+dataArray[6]);       
     });
 }

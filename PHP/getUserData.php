@@ -2,7 +2,7 @@
     session_start();
     $username = $_SESSION['username'];
     $db_connect = mysqli_connect('localhost','root','itp2016!','craftstore');
-    $query = "SELECT Username, Name, Email, Adresse, Telefonnummer, Profilbeschreibung, Hash, Profilbild FROM user WHERE Username = '$username'";
+    $query = "SELECT Username, Name, Email, Adresse, Telefonnummer, Profilbeschreibung, Profilbild, Profilbild_Nummer FROM user WHERE Username = '$username'";
     $result = mysqli_query($db_connect, $query);
     
     while($data = mysqli_fetch_array($result))
