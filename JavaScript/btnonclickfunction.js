@@ -2,18 +2,27 @@
 $(document).ready(function () {
     $("#navbarbtn1").click(function() { buttonclick(this.innerHTML); });
     $("#navbarbtn2").click(function() { buttonclick(this.innerHTML); });
+    $("#navbarbtn3").click(function() { buttonclick(this.innerHTML); });
+    $("#navbarbtn4").click(function() { buttonclick(this.innerHTML); });
+    $("#categoriedropdown").click(function() { buttonclick("dropdown"); });
 });
 
 function buttonclick(value)
 {
     if(value=="Logout"){
-        document.getElementById("navbarbtn1").innerHTML="Registrieren";
-        document.getElementById("navbarbtn2").innerHTML="Login";        
         var request = $.ajax({
             url: "PHP/logout.php",
             type: "post"
         });
         request.done(function (response, textStatus, jqXHR) {
+            document.getElementById("navbarbtn1").innerHTML = "";
+            document.getElementById("navbarbtn2").innerHTML = "";
+            document.getElementById("navbarbtn3").innerHTML = "Registrieren";
+            document.getElementById("navbarbtn4").innerHTML = "Login";
+            $( "#navbarbtn1" ).css('border-bottom', 'none');
+            $( "#navbarbtn2" ).css('border-bottom', 'none');
+            $( "#navbarbtn3" ).css('border-bottom', 'none');
+            $( "#navbarbtn4" ).css('border-bottom', 'none'); 
             generateMain();
         });
     }
@@ -27,16 +36,19 @@ function buttonclick(value)
             generateProfil(function(){});
         });
 
-        var navb1= document.getElementById("navbarbtn1");
-        navb1.innerHTML="Meine Produkte";
-        navb1.style.width = "130px";
+        $( "#navbarbtn1" ).css('border-bottom', 'none');
+        $( "#navbarbtn2" ).css('border-bottom', 'none');
+        $( "#navbarbtn3" ).css('border-bottom', '2px solid rgb(51,122,183)');
+        $( "#navbarbtn4" ).css('border-bottom', 'none');
     }
     else if(value=="Meine Produkte")
     {
         generateMain();
-        var navb1= document.getElementById("navbarbtn1");
-        navb1.innerHTML="Profil";
-        navb1.style.width = "100px"; 
+        
+        $( "#navbarbtn1" ).css('border-bottom', 'none');
+        $( "#navbarbtn2" ).css('border-bottom', '2px solid rgb(51,122,183)');
+        $( "#navbarbtn3" ).css('border-bottom', 'none');
+        $( "#navbarbtn4" ).css('border-bottom', 'none');
     }
     else if(value=="Login")
     {        
@@ -57,8 +69,23 @@ function buttonclick(value)
     else if(value=="Change_Profilbild") {
         $("#profilbildmodal").modal("show");
     }
+    else if(value=="Suchen") {
+        generateProducts("Alle Kategorien");
+        $( "#navbarbtn1" ).css('border-bottom', '2px solid rgb(51,122,183)');
+        $( "#navbarbtn2" ).css('border-bottom', 'none');
+        $( "#navbarbtn3" ).css('border-bottom', 'none');
+        $( "#navbarbtn4" ).css('border-bottom', 'none');
+    }
+    else if(value=="dropdown") {
+        $( "#navbarbtn1" ).css('border-bottom', '2px solid rgb(51,122,183)');
+        $( "#navbarbtn2" ).css('border-bottom', 'none');
+        $( "#navbarbtn3" ).css('border-bottom', 'none');
+        $( "#navbarbtn4" ).css('border-bottom', 'none');
+    }
 }
 
 function categorieclick(value){
-    //
+    var startIndex = value.lastIndexOf(">") + 2;
+    var categorie = value.substr(startIndex);
+    generateProducts(categorie);
 }

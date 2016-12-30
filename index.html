@@ -42,8 +42,10 @@
 			</a>
 			<img id="navbarlogo2" style="max-width:100px;" src="Images/website_img/icon.png">
 			<div class="btn-div pull-right ">
-				<button class="btn whitebluebutton" id="navbarbtn1" data-toggle="modal" type="button">Registrieren</button>
-				<button class="btn whitebluebutton" id="navbarbtn2" data-toggle="modal" type="button">Login</button>
+				<button class="btn whitebluebutton" id="navbarbtn1" data-toggle="modal" type="button"></button>
+				<button class="btn whitebluebutton" id="navbarbtn2" data-toggle="modal" type="button"></button>
+				<button class="btn whitebluebutton" id="navbarbtn3" data-toggle="modal" type="button">Registrieren</button>
+				<button class="btn whitebluebutton" id="navbarbtn4" data-toggle="modal" type="button">Login</button>
 			</div>
 		</div>
 
@@ -60,7 +62,7 @@
 
 					<div class="row">
 						<div class="col-xs-12 col-sm-4 col-md-4">
-							<a onclick="categorieclick(this.innerHTML)" class="btn bluewhitebuttoncat"><span class="glyphicon glyphicon-th" aria-hidden="true"></span>  Alle Kategorien</a>
+							<a onclick="categorieclick(this.innerHTML)" class="btn bluewhitebuttoncat"><span class="glyphicon glyphicon-th" aria-hidden="true"></span> Alle Kategorien</a>
 						</div>
 						<div class="col-xs-12 col-sm-4 col-md-4">
 							<a onclick="categorieclick(this.innerHTML)" class="btn bluewhitebuttoncat"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Kleidung</a>
@@ -150,9 +152,9 @@
 						<input type="password" class="form-control" id="tb_pw_register" placeholder="Passwort" /><br>
 						<input type="text" class="form-control" id="tb_address_register" placeholder="Adresse" /><br>
 						<input type="text" class="form-control" id="tb_phone_register" placeholder="Telefonnummer" /><br>
-						<textarea onkeydown="setlength()" onkeyup="setlength()" onkeypress="setlength()" class="form-control desc" rows="3" maxlength="250"
+						<textarea onkeydown="setlength('register')" onkeyup="setlength('register')" onkeypress="setlength('register')" class="form-control desc" rows="3" maxlength="250"
 							id="tb_description_register" placeholder="Profilbeschreibung" required></textarea>
-						<p id="descr_length" class="pull-right">0/250</p>
+						<p id="descr_length_register" class="pull-right">0/250</p>
 
 						<button type="button" class="btn bluewhitebutton" id="bt_register" value="Registrieren">Registrieren</button>
 
@@ -184,8 +186,8 @@
 				<div class="modal-body">
 					<div>
 						<form id="form_upload" method="post" enctype="multipart/form-data">
-							<input type="text" class="form-control" id="tb_product_name" placeholder="Produkt Name" /><br>
-							<select class="selectpicker" id="tb_product_category" data-show-icon="true">
+							<input type="text" class="form-control" id="tb_product_name" name="product_name" placeholder="Produkt Name" /><br>
+							<select class="selectpicker" id="tb_product_category" name="product_category" data-show-icon="true">
 								<option selected>Kategorie auswählen</option>
 								<option value="Kleidung" data-icon="glyphicon-user">Kleidung</option>
 								<option value="Schmuck" data-icon="glyphicon-sunglasses">Schmuck</option>
@@ -195,11 +197,11 @@
 								<option value="Dekoration" data-icon="glyphicon-lamp">Dekoration</option>
 								<option value="Handwerk" data-icon="glyphicon-wrench">Handwerk</option>
 								<option value="Sonstiges" data-icon="glyphicon-option-horizontal center">Sonstiges</option>
-							</select> <br>
-							<input type="text" class="form-control" id="tb_product_price" placeholder="Preis (€)" /><br>
-							<textarea onkeydown="setlength()" onkeyup="setlength()" onkeypress="setlength()" class="form-control desc" rows="3" maxlength="250"
-								id="tb_product_description" placeholder="Produktbeschreibung" required></textarea>
-							<p id="descr_length" class="pull-right">0/250</p>
+							</select> <br><br>
+							<input type="text" class="form-control" id="tb_product_price" name="product_price" placeholder="Preis (€)" /><br>
+							<textarea onkeydown="setlength('upload')" onkeyup="setlength('upload')" onkeypress="setlength('upload')" class="form-control desc" rows="3" maxlength="250"
+								id="tb_product_description" name="product_description" placeholder="Produktbeschreibung" required></textarea>
+							<p id="descr_length_upload" class="pull-right">0/250</p>
 							<div id="div_preview" class="div_preview"><img id="img_preview" class="img_preview" /></div>
 							<div class="div_upload_buttons">
 								<label class="btn btn-default btn-file" id="bt_browse">
@@ -273,6 +275,80 @@
 						<div class="alert alert-success collapse" role="alert" id="profilbildsuccessalert">
 							<strong>Erfolgreich geändert!</strong>
 						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--popup für produkt anzeigen -->
+	<div class="modal fade" id="produktmodal" role="dialog">
+		<div class="modal-dialog">
+			
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title" id="show_product_productname"></h4>
+				</div>
+
+				<div class="modal-body">
+					<div>
+						Verkäufer: <div id="div_show_product_name"></div>
+						<br>
+						Preis: <div id="div_show_product_price"></div>
+						<br>
+						E-Mail: <div id="div_show_product_email"></div>
+						<br>
+						Telefonnummer: <div id="div_show_product_phone"></div>
+						<br>
+						Produktbeschreibung: <div id="div_show_product_description"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--popup für eigene Produkte ansehen/bearbeiten -->
+	<div class="modal fade" id="meinproduktmodal" role="dialog">
+		<div class="modal-dialog">
+			
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title" id="show_myproduct_productname">Produkt bearbeiten</h4>
+				</div>
+
+				<div class="modal-body">
+					<div>
+						<form id="form_upload_myproduct" method="post" enctype="multipart/form-data">
+							<input type="text" class="form-control" id="tb_myproduct_name" name="myproduct_name" placeholder="Produkt Name" /><br>
+							<input type="text" class="form-control" id="tb_myproduct_category" name="myproduct_category" readonly/>
+							<select class="selectpicker" id="tb_myproduct_category" name="myproduct_category" data-show-icon="true">
+								<option>Neue Kategorie auswählen</option>
+								<option value="Kleidung" data-icon="glyphicon-user">Kleidung</option>
+								<option value="Schmuck" data-icon="glyphicon-sunglasses">Schmuck</option>
+								<option value="Taschen" data-icon="glyphicon-briefcase">Taschen</option>
+								<option value="Kunst" data-icon="glyphicon-picture">Kunst</option>
+								<option value="Geschirr" data-icon="glyphicon-cutlery">Geschirr</option>
+								<option value="Dekoration" data-icon="glyphicon-lamp">Dekoration</option>
+								<option value="Handwerk" data-icon="glyphicon-wrench">Handwerk</option>
+								<option value="Sonstiges" data-icon="glyphicon-option-horizontal center">Sonstiges</option>
+							</select> <br><br>
+							<input type="text" class="form-control" id="tb_myproduct_price" name="myproduct_price" placeholder="Preis (€)" /><br>
+							<textarea onkeydown="setlength('myproduct')" onkeyup="setlength('myproduct')" onkeypress="setlength('myproduct')" class="form-control desc" rows="3" maxlength="250"
+								id="tb_myproduct_description" name="myproduct_description" placeholder="Produktbeschreibung" required></textarea>
+							<p id="descr_length_myproduct" class="pull-right">0/250</p>
+							<div id="div_preview_myproduct" class="div_preview"><img id="img_preview_myproduct" class="img_preview" /></div>
+							<div class="div_upload_buttons">
+								<label class="btn btn-default btn-file" id="bt_browse_myproduct">
+									Browse...
+									<input type="file" name="file_myproduct" id="file_myproduct" required>
+								</label>
+								<input type="submit" class="btn btn-default" value="Aktualisieren" id="bt_upload_myproduct" />
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>

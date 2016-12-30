@@ -22,7 +22,7 @@
     float: left;
 }
 
-#bt_browse,#bt_upload,#bt_browse_profilbild,#bt_upload_profilbild{
+#bt_browse,#bt_upload,#bt_browse_profilbild,#bt_upload_profilbild,#bt_browse_myproduct,#bt_upload_myproduct{
 	width: 49%;
 }
 
@@ -34,7 +34,7 @@
     padding-top: 280px;
 }
 
-#file, #file_profilbild {
+#file, #file_profilbild, #file_myproduct {
     display: none;
 }
 
@@ -64,4 +64,8 @@ main {
 #profilbild {
     width: 200px;
     height: 200px;
+}
+
+#navbarbtn2 {
+    width: 130px;
 }

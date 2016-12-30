@@ -47,8 +47,10 @@ function register() {
                 document.getElementById("tb_address_register").value = "";
                 document.getElementById("tb_phone_register").value = "";
                 document.getElementById("tb_description_register").value = "";
-                document.getElementById("navbarbtn1").innerHTML = "Profil";
-                document.getElementById("navbarbtn2").innerHTML = "Logout";
+                document.getElementById("navbarbtn1").innerHTML = "Suchen";
+                document.getElementById("navbarbtn2").innerHTML = "Meine Produkte";
+                document.getElementById("navbarbtn3").innerHTML = "Profil";
+                document.getElementById("navbarbtn4").innerHTML = "Logout";
             }, 1000);
         }
     });
@@ -78,9 +80,11 @@ function login() {
                 $("#loginsuccessalert").hide();
                 document.getElementById("tb_pw_login").value = "";
                 document.getElementById("tb_email_login").value = "";
-                document.getElementById("navbarbtn1").innerHTML = "Profil";
-                document.getElementById("navbarbtn2").innerHTML = "Logout";
-                generateMain();
+                document.getElementById("navbarbtn1").innerHTML = "Suchen";
+                document.getElementById("navbarbtn2").innerHTML = "Meine Produkte";
+                document.getElementById("navbarbtn3").innerHTML = "Profil";
+                document.getElementById("navbarbtn4").innerHTML = "Logout";
+                buttonclick("Profil");
             }, 500);
         }
     });
@@ -93,8 +97,11 @@ function isLoggedin() {
     });
     request.done(function (response, textStatus, jqXHR) {
         if (response == "true") {
-            document.getElementById("navbarbtn1").innerHTML = "Profil";
-            document.getElementById("navbarbtn2").innerHTML = "Logout";
+            document.getElementById("navbarbtn1").innerHTML = "Suchen";
+            document.getElementById("navbarbtn2").innerHTML = "Meine Produkte";
+            document.getElementById("navbarbtn3").innerHTML = "Profil";
+            document.getElementById("navbarbtn4").innerHTML = "Logout";
+            buttonclick("Profil");
         }
     });
 }
@@ -124,8 +131,14 @@ function delete_account() {
                 $("#deleteaccountsuccessalert").hide();
                 document.getElementById("tb_pw_delete").value = "";
                 document.getElementById("tb_email_delete").value = "";
-                document.getElementById("navbarbtn1").innerHTML = "Registrieren";
-                document.getElementById("navbarbtn2").innerHTML = "Login";
+                document.getElementById("navbarbtn1").innerHTML = "";
+                document.getElementById("navbarbtn2").innerHTML = "";
+                document.getElementById("navbarbtn3").innerHTML = "Registrieren";
+                document.getElementById("navbarbtn4").innerHTML = "Login";
+                $( "#navbarbtn1" ).css('border-bottom', 'none');
+                $( "#navbarbtn2" ).css('border-bottom', 'none');
+                $( "#navbarbtn3" ).css('border-bottom', 'none');
+                $( "#navbarbtn4" ).css('border-bottom', 'none');
                 generateMain();
             }, 500);
         }
