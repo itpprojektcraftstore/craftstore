@@ -27,7 +27,6 @@ function register() {
         }
     });
     request.done(function (response, textStatus, jqXHR) {
-        console.log(response);
         if (response != "true") {
             $("#registrationfailedalert").show();
             setTimeout(function () {
@@ -116,7 +115,6 @@ function delete_account() {
         }
     });
     request.done(function (response, textStatus, jqXHR) {
-        console.log(response);
         if (response != "true") {
             $("#deleteaccountfailedalert").show();
             setTimeout(function () {

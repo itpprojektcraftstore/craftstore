@@ -26,6 +26,12 @@
 	width: 49%;
 }
 
+#bt_delete_myproduct {
+    width: 49%;
+    margin-left: 25.5%;
+    margin-top: 10px;
+}
+
 #bt_profilbild{
     width: 100%;
 }
@@ -55,6 +61,8 @@ main {
     width: 300px;
     border-radius: 150px;
     margin-bottom: 80px;
+    cursor: pointer;
+    cursor: hand;
 }
 
 #profilbeschreibung {

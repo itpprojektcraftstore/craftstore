@@ -10,7 +10,7 @@
 
     $name = $_POST["product_name"];
     $category = $_POST["product_category"];
-    if ($category == "Kategorie auswählen") { $category = "Keine"; }
+    if ($category == "Kategorie auswählen") { $category = "Sonstiges"; }
     $price = $_POST["product_price"];
     $description = $_POST["product_description"];
 

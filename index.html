@@ -25,6 +25,7 @@
 
 	<link type="text/css" rel="stylesheet" href="CSS/style.css">
 	<link type="text/css" rel="stylesheet" href="CSS/upload.css">
+	<script type="text/javascript" src="JavaScript/generate.js"></script>
 	<script type="text/javascript" src="JavaScript/upload.js"></script>
 	<script type="text/javascript" src="JavaScript/account.js"></script>
 	<script type="text/javascript" src="JavaScript/mainpageready.js"></script>
@@ -185,7 +186,7 @@
 
 				<div class="modal-body">
 					<div>
-						<form id="form_upload" method="post" enctype="multipart/form-data">
+						<form id="form_upload" method="post" enctype="multipart/form-data" novalidate>
 							<input type="text" class="form-control" id="tb_product_name" name="product_name" placeholder="Produkt Name" /><br>
 							<select class="selectpicker" id="tb_product_category" name="product_category" data-show-icon="true">
 								<option selected>Kategorie auswählen</option>
@@ -262,7 +263,7 @@
 
 				<div class="modal-body">
 					<div>
-						<form id="form_upload_profilbild" method="post" enctype="multipart/form-data">
+						<form id="form_upload_profilbild" method="post" enctype="multipart/form-data" novalidate>
 							<div id="div_preview_profilbild" class="div_preview"><img id="img_preview_profilbild" class="img_preview"/></div>
 							<div class="div_upload_buttons">
 								<label class="btn btn-default btn-file" id="bt_browse_profilbild">
@@ -322,7 +323,7 @@
 
 				<div class="modal-body">
 					<div>
-						<form id="form_upload_myproduct" method="post" enctype="multipart/form-data">
+						<form id="form_upload_myproduct" method="post" enctype="multipart/form-data" novalidate>
 							<input type="text" class="form-control" id="tb_myproduct_name" name="myproduct_name" placeholder="Produkt Name" /><br>
 							<input type="text" class="form-control" id="tb_myproduct_category_old" name="myproduct_category_old" readonly/>
 							<select class="selectpicker" id="tb_myproduct_category" name="myproduct_category" data-show-icon="true">
@@ -347,8 +348,12 @@
 									<input type="file" name="file_myproduct" id="file_myproduct" required>
 								</label>
 								<input type="submit" class="btn btn-default" value="Aktualisieren" id="bt_upload_myproduct" />
+								<!--<input type="submit" class="btn btn-danger" value="Produkt löschen" id="bt_delete_myproduct" />-->
 							</div>
 						</form>
+						<div class="alert alert-success collapse" role="alert" id="myproductsuccessalert">
+							<strong>Erfolgreich geändert!</strong>
+						</div>
 					</div>
 				</div>
 			</div>
