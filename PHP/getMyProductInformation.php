@@ -1,6 +1,7 @@
 <?php
     session_start();
     $src = $_POST['src'];
+    $_SESSION['old_source'] = $src;
     $username = $_SESSION['username'];
 
     $db_connect = mysqli_connect('localhost','root','itp2016!','craftstore');
