@@ -106,13 +106,17 @@ function showMyProduct(src) {
 }
 
 function show_change_profil() {
+    var src = document.getElementById("profilbild").src;
+    var startIndex = src.lastIndexOf("/") + 1;
+    src = src.substr(startIndex);
+
     var request = $.ajax({
         url: "PHP/getProfilInformation.php",
-        type: "post"
+        type: "post",
+        data: { src: src }
     });
     request.done(function (response, textStatus, jqXHR) {
         var dataArray = response.split('|');
-        document.getElementById("tb_profil_username").value = dataArray[0];
         document.getElementById("tb_profil_name").value = dataArray[1];
         document.getElementById("tb_profil_email").value = dataArray[2];
         document.getElementById("tb_profil_address").value = dataArray[3];

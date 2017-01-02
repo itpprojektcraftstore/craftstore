@@ -62,7 +62,7 @@ function login() {
         url: "PHP/login.php",
         type: "post",
         data: {
-            email: document.getElementById("tb_email_login").value,
+            username: document.getElementById("tb_username_login").value,
             pw: document.getElementById("tb_pw_login").value
         }
     });
@@ -80,7 +80,7 @@ function login() {
                 $("#loginmodal").modal("hide");
                 $("#loginsuccessalert").hide();
                 document.getElementById("tb_pw_login").value = "";
-                document.getElementById("tb_email_login").value = "";
+                document.getElementById("tb_username_login").value = "";
                 document.getElementById("navbarbtn1").innerHTML = "Meine Produkte";
                 document.getElementById("navbarbtn2").innerHTML = "Suchen";
                 document.getElementById("navbarbtn3").innerHTML = "Profil";

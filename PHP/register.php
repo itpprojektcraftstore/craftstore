@@ -8,14 +8,14 @@
     $description = $_POST['description'];
 
 	$db_connect = mysqli_connect("localhost","root","itp2016!",'craftstore');
-    $query = "SELECT Username FROM user WHERE Username = '$username' AND Email ='$email'";
+    $query = "SELECT Username FROM user WHERE Username = '$username' OR Email ='$email'";
     $result = mysqli_query($db_connect, $query);
     $user = mysqli_fetch_array($result)[0];
 
     if($user == "") { // only if username & email are still available
 
         $randomstring = 'n2c3gG?f!sXg';
-        $salt = $email.$pw.$randomstring;
+        $salt = $username.$pw.$randomstring;
         $hash = hash('sha256', $salt);
 
         $query = "INSERT INTO user(Username, Name, Email, Adresse, Telefonnummer, Profilbeschreibung, Hash, Profilbild) 
