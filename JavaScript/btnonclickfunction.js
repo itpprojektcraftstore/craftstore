@@ -16,14 +16,14 @@ function buttonclick(value)
         });
         request.done(function (response, textStatus, jqXHR) {
             document.getElementById("navbarbtn1").innerHTML = "";
-            document.getElementById("navbarbtn2").innerHTML = "";
+            document.getElementById("navbarbtn2").innerHTML = "Suchen";
             document.getElementById("navbarbtn3").innerHTML = "Registrieren";
             document.getElementById("navbarbtn4").innerHTML = "Login";
             $( "#navbarbtn1" ).css('border-bottom', 'none');
-            $( "#navbarbtn2" ).css('border-bottom', 'none');
+            $( "#navbarbtn2" ).css('border-bottom', '2px solid rgb(51,122,183)');
             $( "#navbarbtn3" ).css('border-bottom', 'none');
             $( "#navbarbtn4" ).css('border-bottom', 'none'); 
-            generateMain();
+            generateProducts("Alle Kategorien");
         });
     }
     else if(value=="Profil")
@@ -45,8 +45,8 @@ function buttonclick(value)
     {
         generateMain();
         
-        $( "#navbarbtn1" ).css('border-bottom', 'none');
-        $( "#navbarbtn2" ).css('border-bottom', '2px solid rgb(51,122,183)');
+        $( "#navbarbtn1" ).css('border-bottom', '2px solid rgb(51,122,183)');
+        $( "#navbarbtn2" ).css('border-bottom', 'none');
         $( "#navbarbtn3" ).css('border-bottom', 'none');
         $( "#navbarbtn4" ).css('border-bottom', 'none');
     }
@@ -71,14 +71,14 @@ function buttonclick(value)
     }
     else if(value=="Suchen") {
         generateProducts("Alle Kategorien");
-        $( "#navbarbtn1" ).css('border-bottom', '2px solid rgb(51,122,183)');
-        $( "#navbarbtn2" ).css('border-bottom', 'none');
+        $( "#navbarbtn1" ).css('border-bottom', 'none');
+        $( "#navbarbtn2" ).css('border-bottom', '2px solid rgb(51,122,183)');
         $( "#navbarbtn3" ).css('border-bottom', 'none');
         $( "#navbarbtn4" ).css('border-bottom', 'none');
     }
     else if(value=="dropdown") {
-        $( "#navbarbtn1" ).css('border-bottom', '2px solid rgb(51,122,183)');
-        $( "#navbarbtn2" ).css('border-bottom', 'none');
+        $( "#navbarbtn1" ).css('border-bottom', '');
+        $( "#navbarbtn2" ).css('border-bottom', '2px solid rgb(51,122,183)');
         $( "#navbarbtn3" ).css('border-bottom', 'none');
         $( "#navbarbtn4" ).css('border-bottom', 'none');
     }

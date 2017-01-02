@@ -74,6 +74,10 @@ main {
     height: 200px;
 }
 
-#navbarbtn2 {
+#navbarbtn1 {
     width: 130px;
+}
+
+#navbarbtn2 {
+    border-bottom: 2px solid rgb(51,122,183);
 }
