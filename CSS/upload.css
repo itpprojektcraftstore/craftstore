@@ -22,7 +22,7 @@
     float: left;
 }
 
-#bt_browse,#bt_upload,#bt_browse_profilbild,#bt_upload_profilbild,#bt_browse_myproduct,#bt_upload_myproduct{
+#bt_browse,#bt_upload,#bt_browse_myproduct,#bt_upload_myproduct,#bt_browse_profil,#bt_upload_profil{
 	width: 49%;
 }
 
@@ -32,15 +32,11 @@
     margin-top: 10px;
 }
 
-#bt_profilbild{
-    width: 100%;
-}
-
 .div_upload_buttons {
     padding-top: 280px;
 }
 
-#file, #file_profilbild, #file_myproduct {
+#file, #file_myproduct, #file_profil {
     display: none;
 }
 

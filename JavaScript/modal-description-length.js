@@ -12,4 +12,8 @@ function setlength(what) {
         var l = document.getElementById("tb_myproduct_description").value.length;
         document.getElementById("descr_length_myproduct").innerHTML = l+"/250";
     }
+    else if (what == 'profil') {
+        var l = document.getElementById("tb_profil_description").value.length;
+        document.getElementById("descr_length_profil").innerHTML = l+"/250";
+    }
 }

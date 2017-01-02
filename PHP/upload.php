@@ -18,5 +18,6 @@
     $query = "INSERT INTO produkte(Username, Name, Kategorie, Bild, Preis, Beschreibung) VALUES ('$username','$name','$category','$filename','$price','$description')";
     mysqli_query($db_connect, $query);
     mysqli_close($db_connect);
+    echo $sourcePath;
 	exit();
 ?>

@@ -21,6 +21,7 @@ $(document).ready(function () {
             timestamp_end = new Date();
             time = (timestamp_end - timestamp_start) / 1000;
             console.log(time + "s");
+            console.log(response);
             $("#uploadinfoalert").hide();
             $("#uploadsuccessalert").show();
             setTimeout(function () {
@@ -42,10 +43,10 @@ $(document).ready(function () {
         reader.readAsDataURL(this.files[0]);
     });
 
-    //Profilbild-Upload
-    $("#form_upload_profilbild").submit(function () {
+    //Profil bearbeiten
+    $("#form_change_profil").submit(function () {
         var request = $.ajax({
-            url: "PHP/profilbild.php",
+            url: "PHP/change_profil.php",
             type: "post",
             contentType: false,
             cache: false,
@@ -53,22 +54,23 @@ $(document).ready(function () {
             data: new FormData(this)
         });
         request.done(function (response, textStatus, jqXHR) {
+            console.log(response);
             generateProfil();
             
-            $("#profilbildsuccessalert").show();
+            $("#profilsuccessalert").show();
             setTimeout(function () {
-                $("#profilbildsuccessalert").hide();
-                $("#profilbildmodal").modal("hide");
-                resetPreviewProfilbild();
-            }, 1500);
+                $("#profilsuccessalert").hide();
+                $("#profilmodal").modal("hide");
+                resetPreviewProfil();
+            }, 1000);
         });
         return false;
     });
 
     //Profilbild-Preview
-    $(" #file_profilbild ").change(function () {
+    $(" #file_profil ").change(function () {
         var reader = new FileReader();
-        reader.onload = imageIsLoadedProfilbild;
+        reader.onload = imageIsLoadedProfil;
         reader.readAsDataURL(this.files[0]);
     });
 
@@ -114,16 +116,16 @@ function resetPreview() {
     $(" #img_preview ").attr('src', '');
 }
 
-function imageIsLoadedProfilbild(e) {
-    $(" #div_preview_profilbild ").css("border", "none");
-    $(" #img_preview_profilbild ").attr('src', e.target.result);
-    $(" #img_preview_profilbild ").attr('width', '250px');
-    $(" #img_preview_profilbild ").attr('height', '250px');
+function imageIsLoadedProfil(e) {
+    $(" #div_preview_profil ").css("border", "none");
+    $(" #img_preview_profil ").attr('src', e.target.result);
+    $(" #img_preview_profil ").attr('width', '250px');
+    $(" #img_preview_profil ").attr('height', '250px');
 }
 
-function resetPreviewProfilbild() {
-    $(" #div_preview_profilbild ").css("border", "1px solid");
-    $(" #img_preview_profilbild ").attr('src', '');
+function resetPreviewProfil() {
+    $(" #div_preview_profil ").css("border", "1px solid");
+    $(" #img_preview_profil ").attr('src', '');
 }
 
 function imageIsLoadedMyProduct(e) {

@@ -18,11 +18,15 @@
         $salt = $email.$pw.$randomstring;
         $hash = hash('sha256', $salt);
 
-        $query = "INSERT INTO user(Username, Name, Email, Adresse, Telefonnummer, Profilbeschreibung, Hash) 
-                VALUES ('$username','$name','$email','$address','$phone','$description','$hash')";
+        $query = "INSERT INTO user(Username, Name, Email, Adresse, Telefonnummer, Profilbeschreibung, Hash, Profilbild) 
+                VALUES ('$username','$name','$email','$address','$phone','$description','$hash', '.jpg')";
         mysqli_query($db_connect, $query);
 
         mkdir("../Uploads/".$username);
+
+        $sourcePath = "../Images/standard_profilbild.jpg";
+        $targetPath = "../Uploads/".$username."/ProfilProfilProfilbild0.jpg";
+        copy($sourcePath,$targetPath); //Standard Profibild speichern
 
         session_start();
         $_SESSION['username'] = $username;

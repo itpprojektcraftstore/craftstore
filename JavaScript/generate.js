@@ -25,18 +25,14 @@ function generateProfil() {
     });
     request.done(function (response, textStatus, jqXHR) {
         var dataArray = response.split('|');
+        console.log(dataArray[0]);
         document.getElementById("username").innerHTML = "Username: "+dataArray[0];
         document.getElementById("name").innerHTML = "Name: "+dataArray[1];
         document.getElementById("email").innerHTML = "E-Mail : "+dataArray[2];
         document.getElementById("adresse").innerHTML = "Adresse: "+dataArray[3];
         document.getElementById("telefonnummer").innerHTML = "Telefonnummer: "+dataArray[4];
         document.getElementById("profilbeschreibung").innerHTML = "Profilbeschreibung: "+dataArray[5];
-        if(dataArray[6] == "") {
-            $(" #profilbild ").attr('src', 'Images/standard_profilbild.jpg');
-        }
-        else {
-            $(" #profilbild ").attr('src', 'Uploads/'+dataArray[0]+'/ProfilProfilProfilbild'+dataArray[7]+dataArray[6]);
-        }   
+        $(" #profilbild ").attr('src', 'Uploads/'+dataArray[0]+'/ProfilProfilProfilbild'+dataArray[7]+dataArray[6]);
     });
 }
 
@@ -106,5 +102,31 @@ function showMyProduct(src) {
         $(" #img_preview_myproduct ").attr('height', '250px');
 
         $("#meinproduktmodal").modal("show");
+    });
+}
+
+function show_change_profil() {
+    var request = $.ajax({
+        url: "PHP/getProfilInformation.php",
+        type: "post"
+    });
+    request.done(function (response, textStatus, jqXHR) {
+        var dataArray = response.split('|');
+        document.getElementById("tb_profil_username").value = dataArray[0];
+        document.getElementById("tb_profil_name").value = dataArray[1];
+        document.getElementById("tb_profil_email").value = dataArray[2];
+        document.getElementById("tb_profil_address").value = dataArray[3];
+        document.getElementById("tb_profil_phone").value = dataArray[4];
+        document.getElementById("tb_profil_description").innerHTML = dataArray[5];
+        setlength('profil');
+        
+        var src = 'Uploads/'+dataArray[0]+'/ProfilProfilProfilbild'+dataArray[7]+dataArray[6];
+
+        $(" #div_preview_profil ").css("border", "none");
+        $(" #img_preview_profil ").attr('src', src);
+        $(" #img_preview_profil ").attr('width', '250px');
+        $(" #img_preview_profil ").attr('height', '250px');
+
+        $("#profilmodal").modal("show");
     });
 }

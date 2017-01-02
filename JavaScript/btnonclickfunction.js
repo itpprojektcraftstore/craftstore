@@ -66,8 +66,8 @@ function buttonclick(value)
     {
         $("#deleteaccountmodal").modal("show");
     }
-    else if(value=="Change_Profilbild") {
-        $("#profilbildmodal").modal("show");
+    else if(value=="Change_Profil") {
+        show_change_profil();
     }
     else if(value=="Suchen") {
         generateProducts("Alle Kategorien");

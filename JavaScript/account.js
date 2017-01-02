@@ -27,6 +27,7 @@ function register() {
         }
     });
     request.done(function (response, textStatus, jqXHR) {
+        console.log(response);
         if (response != "true") {
             $("#registrationfailedalert").show();
             setTimeout(function () {
