@@ -6,7 +6,7 @@
     $hash = hash('sha256', $salt);
     
     $db_connect = mysqli_connect('localhost','root','itp2016!','craftstore');
-    $query = "SELECT Username FROM user WHERE Email = '$email' AND Hash = '$hash'";
+    $query = "SELECT Username FROM user WHERE Username = '$username' AND Hash = '$hash'";
     $result = mysqli_query($db_connect, $query);
     $user = mysqli_fetch_array($result)[0];
 

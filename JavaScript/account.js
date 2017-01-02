@@ -67,6 +67,7 @@ function login() {
         }
     });
     request.done(function (response, textStatus, jqXHR) {
+        console.log(response);
         if (response == "false") {
             $("#loginfailedalert").show();
             setTimeout(function () {
