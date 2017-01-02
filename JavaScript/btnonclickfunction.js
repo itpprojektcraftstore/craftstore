@@ -5,26 +5,13 @@ $(document).ready(function () {
     $("#navbarbtn3").click(function() { buttonclick(this.innerHTML); });
     $("#navbarbtn4").click(function() { buttonclick(this.innerHTML); });
     $("#categoriedropdown").click(function() { buttonclick("dropdown"); });
+    $("#bt_change_password").click(function() { changePassword(); });
 });
 
 function buttonclick(value)
 {
     if(value=="Logout"){
-        var request = $.ajax({
-            url: "PHP/logout.php",
-            type: "post"
-        });
-        request.done(function (response, textStatus, jqXHR) {
-            document.getElementById("navbarbtn1").innerHTML = "";
-            document.getElementById("navbarbtn2").innerHTML = "Suchen";
-            document.getElementById("navbarbtn3").innerHTML = "Registrieren";
-            document.getElementById("navbarbtn4").innerHTML = "Login";
-            $( "#navbarbtn1" ).css('border-bottom', 'none');
-            $( "#navbarbtn2" ).css('border-bottom', '2px solid rgb(51,122,183)');
-            $( "#navbarbtn3" ).css('border-bottom', 'none');
-            $( "#navbarbtn4" ).css('border-bottom', 'none'); 
-            generateProducts("Alle Kategorien");
-        });
+        logout();
     }
     else if(value=="Profil")
     {
@@ -81,6 +68,12 @@ function buttonclick(value)
         $( "#navbarbtn2" ).css('border-bottom', '2px solid rgb(51,122,183)');
         $( "#navbarbtn3" ).css('border-bottom', 'none');
         $( "#navbarbtn4" ).css('border-bottom', 'none');
+    }
+    else if(value=='Change_Password') {
+        document.getElementById("tb_change_passowrd_old").value = "";
+        document.getElementById("tb_change_passowrd_new").value = "";
+        document.getElementById("tb_change_passowrd_repeat").value = "";
+        $("#changepasswordmodal").modal("show");
     }
 }
 

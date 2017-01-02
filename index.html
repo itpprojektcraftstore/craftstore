@@ -172,7 +172,6 @@
 		</div>
 	</div>
 
-	<!--Upload Modal-->
 	<!--popup für upload -->
 	<div class="modal fade" id="uploadmodal" role="dialog">
 		<div class="modal-dialog">
@@ -234,7 +233,7 @@
 
 				<div class="modal-body">
 					<div class="form-group">
-						<input type="text" class="form-control" id="tb_email_delete" placeholder="E-Mail" /><br>
+						<input type="text" class="form-control" id="tb_username_delete" placeholder="Username" /><br>
 						<input type="password" class="form-control" id="tb_pw_delete" placeholder="Passwort" /><br>
 						<button type="button" class="btn bluewhitebutton" id="bt_delete_account">Löschen</button>
 
@@ -362,6 +361,38 @@
 						</form>
 						<div class="alert alert-success collapse" role="alert" id="myproductsuccessalert">
 							<strong>Erfolgreich geändert!</strong>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--popup für passwort ändern -->
+	<div class="modal fade" id="changepasswordmodal" role="dialog">
+		<div class="modal-dialog">
+			
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Passwort ändern</h4>
+				</div>
+
+				<div class="modal-body">
+					<div>
+						Altes Passwort: <input type="password" class="form-control" id="tb_change_passowrd_old" /><br>
+						Neues Passowrt: <input type="password" class="form-control" id="tb_change_passowrd_new" /><br>
+						Neues Passwort wiederholen: <input type="password" class="form-control" id="tb_change_passowrd_repeat" /><br>
+						<input type="button" class="btn btn-default" value="Passwort ändern" id="bt_change_password" />
+						<div class="alert alert-success collapse" role="alert" id="changepasswordsuccessalert">
+							<strong>Erfolgreich geändert!</strong>
+						</div>
+						<div class="alert alert-danger collapse" role="alert" id="oldpasswordfailedalert">
+							<strong>Altes Passowort falsch!</strong>
+						</div>
+						<div class="alert alert-danger collapse" role="alert" id="newpasswordfailedalert">
+							<strong>Neue Passwörter nicht identisch!</strong>
 						</div>
 					</div>
 				</div>

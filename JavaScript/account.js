@@ -27,7 +27,6 @@ function register() {
         }
     });
     request.done(function (response, textStatus, jqXHR) {
-        console.log(response);
         if (response != "true") {
             $("#registrationfailedalert").show();
             setTimeout(function () {
@@ -67,7 +66,6 @@ function login() {
         }
     });
     request.done(function (response, textStatus, jqXHR) {
-        console.log(response);
         if (response == "false") {
             $("#loginfailedalert").show();
             setTimeout(function () {
@@ -92,6 +90,24 @@ function login() {
     });
 }
 
+function logout() {
+    var request = $.ajax({
+        url: "PHP/logout.php",
+        type: "post"
+    });
+    request.done(function (response, textStatus, jqXHR) {
+        document.getElementById("navbarbtn1").innerHTML = "";
+        document.getElementById("navbarbtn2").innerHTML = "Suchen";
+        document.getElementById("navbarbtn3").innerHTML = "Registrieren";
+        document.getElementById("navbarbtn4").innerHTML = "Login";
+        $( "#navbarbtn1" ).css('border-bottom', 'none');
+        $( "#navbarbtn2" ).css('border-bottom', '2px solid rgb(51,122,183)');
+        $( "#navbarbtn3" ).css('border-bottom', 'none');
+        $( "#navbarbtn4" ).css('border-bottom', 'none'); 
+        generateProducts("Alle Kategorien");
+    });
+}
+
 function isLoggedin() {
     var request = $.ajax({
         url: "PHP/isLoggedin.php",
@@ -110,10 +126,10 @@ function isLoggedin() {
 
 function delete_account() {
     var request = $.ajax({
-        url: "PHP/delete.php",
+        url: "PHP/delete_account.php",
         type: "post",
         data: {
-            email: document.getElementById("tb_email_delete").value,
+            username: document.getElementById("tb_username_delete").value,
             pw: document.getElementById("tb_pw_delete").value
         }
     });
@@ -131,7 +147,7 @@ function delete_account() {
                 $("#deleteaccountmodal").modal("hide");
                 $("#deleteaccountsuccessalert").hide();
                 document.getElementById("tb_pw_delete").value = "";
-                document.getElementById("tb_email_delete").value = "";
+                document.getElementById("tb_username_delete").value = "";
                 document.getElementById("navbarbtn1").innerHTML = "";
                 document.getElementById("navbarbtn2").innerHTML = "Suchen";
                 document.getElementById("navbarbtn3").innerHTML = "Registrieren";
@@ -144,4 +160,42 @@ function delete_account() {
             }, 500);
         }
     });
+}
+
+function changePassword() {
+    var old_pw = document.getElementById("tb_change_passowrd_old").value;
+    var new_pw = document.getElementById("tb_change_passowrd_new").value;
+    var repeat_pw = document.getElementById("tb_change_passowrd_repeat").value;
+
+    if(new_pw != repeat_pw) {
+        $("#newpasswordfailedalert").show();
+        setTimeout(function () {
+            $("#newpasswordfailedalert").hide();
+        }, 2000);
+    }
+    else {
+        var request = $.ajax({
+            url: "PHP/change_password.php",
+            type: "post",
+            data: {
+                old_pw: old_pw,
+                new_pw: new_pw
+            }
+        });
+        request.done(function (response, textStatus, jqXHR) {
+            if (response == "true") {
+                $("#changepasswordsuccessalert").show();
+                setTimeout(function () {
+                    $("#changepasswordmodal").modal("hide");
+                    $("#changepasswordsuccessalert").hide();
+                }, 1000);
+            }
+            else {
+                $("#oldpasswordfailedalert").show();
+                setTimeout(function () {
+                    $("#oldpasswordfailedalert").hide();
+                }, 2000);
+            }
+        });
+    }
 }

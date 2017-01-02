@@ -20,8 +20,7 @@ $(document).ready(function () {
         request.done(function (response, textStatus, jqXHR) {
             timestamp_end = new Date();
             time = (timestamp_end - timestamp_start) / 1000;
-            console.log(time + "s");
-            console.log(response);
+            //console.log(time + "s");
             $("#uploadinfoalert").hide();
             $("#uploadsuccessalert").show();
             setTimeout(function () {
@@ -54,7 +53,6 @@ $(document).ready(function () {
             data: new FormData(this)
         });
         request.done(function (response, textStatus, jqXHR) {
-            console.log(response);
             generateProfil();
             
             $("#profilsuccessalert").show();
@@ -77,7 +75,7 @@ $(document).ready(function () {
     //Produkt aktualisieren
     $( "#form_upload_myproduct" ).submit(function () {
         var request = $.ajax({
-            url: "PHP/myProduct.php",
+            url: "PHP/change_myProduct.php",
             type: "post",
             contentType: false,
             cache: false,

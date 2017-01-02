@@ -25,7 +25,6 @@ function generateProfil() {
     });
     request.done(function (response, textStatus, jqXHR) {
         var dataArray = response.split('|');
-        console.log(dataArray[0]);
         document.getElementById("username").innerHTML = "Username: "+dataArray[0];
         document.getElementById("name").innerHTML = "Name: "+dataArray[1];
         document.getElementById("email").innerHTML = "E-Mail : "+dataArray[2];
