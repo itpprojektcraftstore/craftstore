@@ -7,15 +7,16 @@
     $description = $_SESSION[$src.'Beschreibung'];
 
     $db_connect = mysqli_connect('localhost','root','itp2016!','craftstore');
-    $query = "SELECT Name, Email, Telefonnummer FROM user WHERE Username = '$username'";
+    $query = "SELECT Name, Email, Telefonnummer, Adresse FROM user WHERE Username = '$username'";
     $result = mysqli_query($db_connect, $query);
     $result = mysqli_fetch_array($result);
     $name = $result[0];
     $email = $result[1];
     $phone = $result[2];
+    $address = $result[3];
     mysqli_close($db_connect);
     
-    echo $name."|".$productname."|".$price."|".$description."|".$email."|".$phone;
+    echo $name."|".$productname."|".$price."|".$description."|".$email."|".$phone."|".$address;
 
 	exit();
 ?>

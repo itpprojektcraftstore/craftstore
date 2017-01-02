@@ -31,7 +31,12 @@ function generateProfil() {
         document.getElementById("adresse").innerHTML = "Adresse: "+dataArray[3];
         document.getElementById("telefonnummer").innerHTML = "Telefonnummer: "+dataArray[4];
         document.getElementById("profilbeschreibung").innerHTML = "Profilbeschreibung: "+dataArray[5];
-        $(" #profilbild ").attr('src', 'Uploads/'+dataArray[0]+'/ProfilProfilProfilbild'+dataArray[7]+dataArray[6]);       
+        if(dataArray[6] == "") {
+            $(" #profilbild ").attr('src', 'Images/standard_profilbild.jpg');
+        }
+        else {
+            $(" #profilbild ").attr('src', 'Uploads/'+dataArray[0]+'/ProfilProfilProfilbild'+dataArray[7]+dataArray[6]);
+        }   
     });
 }
 
@@ -73,6 +78,7 @@ function showProduct(src) {
         document.getElementById("div_show_product_email").innerHTML = dataArray[4];
         if (dataArray[5] == "") { dataArray[5] = "---"; }
         document.getElementById("div_show_product_phone").innerHTML = dataArray[5];
+        document.getElementById("div_show_product_address").innerHTML = dataArray[6];
         $("#produktmodal").modal("show");
     });
 }

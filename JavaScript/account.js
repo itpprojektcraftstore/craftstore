@@ -50,6 +50,7 @@ function register() {
                 document.getElementById("navbarbtn2").innerHTML = "Meine Produkte";
                 document.getElementById("navbarbtn3").innerHTML = "Profil";
                 document.getElementById("navbarbtn4").innerHTML = "Logout";
+                buttonclick("Profil");
             }, 1000);
         }
     });
