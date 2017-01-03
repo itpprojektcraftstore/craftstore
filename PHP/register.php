@@ -14,6 +14,9 @@
 
     if($user == "") { // only if username & email are still available
 
+        if ($phone == "") { $phone = "---"; }
+        if ($description == "") { $description = "---"; }
+
         $randomstring = 'n2c3gG?f!sXg';
         $salt = $username.$pw.$randomstring;
         $hash = hash('sha256', $salt);

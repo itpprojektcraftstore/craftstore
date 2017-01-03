@@ -6,6 +6,7 @@ $(document).ready(function () {
     $("#navbarbtn4").click(function() { buttonclick(this.innerHTML); });
     $("#categoriedropdown").click(function() { buttonclick("dropdown"); });
     $("#bt_change_password").click(function() { changePassword(); });
+    $("#bt_delete_myproduct").click(function() { delete_product(); });
 });
 
 function buttonclick(value)
@@ -42,11 +43,21 @@ function buttonclick(value)
         $("#loginmodal").modal("show");
     }
     else if(value=="Registrieren")
-    {        
+    {
+        $(" #tb_user_register ").css("border", "1px solid #ccc");
+        $(" #tb_name_register ").css("border", "1px solid #ccc");
+        $(" #tb_email_register ").css("border", "1px solid #ccc");
+        $(" #tb_pw_register ").css("border", "1px solid #ccc");
+        $(" #tb_address_register ").css("border", "1px solid #ccc");       
         $("#registrationmodal").modal("show");
     }
     else if(value=="Upload")
     {
+        document.getElementById("tb_product_name").value = "";
+        document.getElementById("tb_product_price").value = "";
+        document.getElementById("tb_product_description").value = "";
+        $(" #tb_product_name ").css("border", "1px solid #ccc");
+        resetPreview();
         $("#uploadmodal").modal("show");
     }
     else if(value=="Delete_Account")
@@ -54,6 +65,9 @@ function buttonclick(value)
         $("#deleteaccountmodal").modal("show");
     }
     else if(value=="Change_Profil") {
+        $(" #tb_profil_name ").css("border", "1px solid #ccc");
+        $(" #tb_profil_email ").css("border", "1px solid #ccc");
+        $(" #tb_profil_address ").css("border", "1px solid #ccc");
         show_change_profil();
     }
     else if(value=="Suchen") {
@@ -81,4 +95,15 @@ function categorieclick(value){
     var startIndex = value.lastIndexOf(">") + 2;
     var categorie = value.substr(startIndex);
     generateProducts(categorie);
+}
+
+function delete_product() {
+    var request = $.ajax({
+        url: "PHP/delete_product.php",
+        type: "post"
+    });
+    request.done(function (response, textStatus, jqXHR) {
+        generateMain();
+        $("#meinproduktmodal").modal("hide");
+    });
 }

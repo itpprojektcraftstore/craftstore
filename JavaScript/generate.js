@@ -13,6 +13,9 @@ function generateMain() {
             content += ("<img src=\"Uploads/" + (dataArray[i * 2]) + "/" + (dataArray[i * 2 + 1]) + "\" onclick=\"showMyProduct(this.src)\" class=\"pics_main\">");
             content += "</div>"
         }
+        content += "<div class=\"col-xs-12 col-sm-6 col-md-4\">";
+        content += "<input type=\"image\" src=\"Images/website_img/uploadbtn.png\" onclick=\"buttonclick('Upload');\" id=\"bt_new_product\" data-toggle=\"modal\" >";
+        content += "</div>"
         content += "</div>"
         document.getElementsByTagName("main")[0].innerHTML = content;
     });
@@ -43,11 +46,33 @@ function generateProducts(categorie) {
     });
     request.done(function (response, textStatus, jqXHR) {
         var dataArray = response.split('|');
-        var repeat = (dataArray.length - 1) / 2;
-        content = "<div class=\"row\">";
+        var userArray = [ ], srcArray = [ ];
+        var repeat = (dataArray.length-1)/2;
         for (i = 0; i < repeat; i++) {
+            userArray[i] = dataArray[i * 2];
+            srcArray[i] = dataArray[i * 2 + 1];
+        }
+
+        //shuffle
+        var index, tmp, counter = userArray.length;
+        while (counter > 0) {
+            index = Math.floor(Math.random() * counter); // Pick a random index
+            counter--;
+
+            //swaps the elements
+            tmp = userArray[counter];
+            userArray[counter] = userArray[index];
+            userArray[index] = tmp;
+
+            tmp = srcArray[counter];
+            srcArray[counter] = srcArray[index];
+            srcArray[index] = tmp;
+        }
+
+        content = "<div class=\"row\">";
+        for (i = 0; i < userArray.length; i++) {
             content += "<div class=\"col-xs-12 col-sm-6 col-md-4\">";
-            content += ("<img src=\"Uploads/" + (dataArray[i * 2]) + "/" + (dataArray[i * 2 + 1]) + "\" onclick=\"showProduct(this.src)\" class=\"pics_main\">");
+            content += ("<img src=\"Uploads/" + userArray[i] + "/" + srcArray[i] + "\" onclick=\"showProduct(this.src)\" class=\"pics_main\">");
             content += "</div>"
         }
         content += "</div>"
@@ -66,19 +91,20 @@ function showProduct(src) {
     });
     request.done(function (response, textStatus, jqXHR) {
         var dataArray = response.split('|');
-        document.getElementById("div_show_product_name").innerHTML = dataArray[0];
-        document.getElementById("show_product_productname").innerHTML = dataArray[1];
-        document.getElementById("div_show_product_price").innerHTML = dataArray[2];
-        document.getElementById("div_show_product_description").innerHTML = dataArray[3];
-        document.getElementById("div_show_product_email").innerHTML = dataArray[4];
-        if (dataArray[5] == "") { dataArray[5] = "---"; }
-        document.getElementById("div_show_product_phone").innerHTML = dataArray[5];
-        document.getElementById("div_show_product_address").innerHTML = dataArray[6];
+        document.getElementById("show_product_username").innerHTML = dataArray[0];
+        document.getElementById("div_show_product_name").innerHTML = dataArray[1];
+        document.getElementById("show_product_productname").innerHTML = dataArray[2];
+        document.getElementById("div_show_product_price").innerHTML = dataArray[3];
+        document.getElementById("div_show_product_description").innerHTML = dataArray[4];
+        document.getElementById("div_show_product_email").innerHTML = dataArray[5];
+        document.getElementById("div_show_product_phone").innerHTML = dataArray[6];
+        document.getElementById("div_show_product_address").innerHTML = dataArray[7];
         $("#produktmodal").modal("show");
     });
 }
 
 function showMyProduct(src) {
+    $(" #tb_myproduct_name ").css("border", "1px solid #ccc");
     var startIndex = src.lastIndexOf("/") + 1;
     src = src.substr(startIndex);
 
@@ -131,5 +157,25 @@ function show_change_profil() {
         $(" #img_preview_profil ").attr('height', '250px');
 
         $("#profilmodal").modal("show");
+    });
+}
+
+function show_profile(username) {
+    var request = $.ajax({
+        url: "PHP/getMoreProfilInformation.php",
+        type: "post",
+        data: { username: username }
+    });
+    request.done(function (response, textStatus, jqXHR) {
+        var dataArray = response.split('|');
+        document.getElementById("show_profile_username").innerHTML = dataArray[0];
+        document.getElementById("show_profil_name").innerHTML = dataArray[1];
+        document.getElementById("show_profil_email").innerHTML = dataArray[2];
+        document.getElementById("show_profil_adresse").innerHTML = dataArray[3];
+        document.getElementById("show_profil_phone").innerHTML = dataArray[4];
+        document.getElementById("show_profil_description").innerHTML = dataArray[5];
+        var src = 'Uploads/'+dataArray[0]+'/ProfilProfilProfilbild'+dataArray[7]+dataArray[6];
+        $(" #img_show_profil ").attr('src', src);
+        $("#showprofilmodal").modal("show");
     });
 }

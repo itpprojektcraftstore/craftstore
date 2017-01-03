@@ -13,47 +13,76 @@ $(document).ready(function () {
 });
 
 function register() {
-    var request = $.ajax({
-        url: "PHP/register.php",
-        type: "post",
-        data: {
-            username: document.getElementById("tb_user_register").value,
-            name: document.getElementById("tb_name_register").value,
-            email: document.getElementById("tb_email_register").value,
-            pw: document.getElementById("tb_pw_register").value,
-            address: document.getElementById("tb_address_register").value,
-            phone: document.getElementById("tb_phone_register").value,
-            description: document.getElementById("tb_description_register").value
-        }
-    });
-    request.done(function (response, textStatus, jqXHR) {
-        if (response != "true") {
-            $("#registrationfailedalert").show();
-            setTimeout(function () {
+    $(" #tb_user_register ").css("border", "1px solid #ccc");
+    $(" #tb_name_register ").css("border", "1px solid #ccc");
+    $(" #tb_email_register ").css("border", "1px solid #ccc");
+    $(" #tb_pw_register ").css("border", "1px solid #ccc");
+    $(" #tb_address_register ").css("border", "1px solid #ccc");
+
+    var check = 0;
+    if(document.getElementById("tb_user_register").value == "") {
+        $(" #tb_user_register ").css("border", "1px solid red");
+        check++;
+    }
+    if(document.getElementById("tb_name_register").value == "") {
+        $(" #tb_name_register ").css("border", "1px solid red");
+        check++;
+    }
+    if(document.getElementById("tb_email_register").value == "") {
+        $(" #tb_email_register ").css("border", "1px solid red");
+        check++;
+    } 
+    if(document.getElementById("tb_pw_register").value == "") {
+        $(" #tb_pw_register ").css("border", "1px solid red");
+        check++;
+    }
+    if(document.getElementById("tb_address_register").value == "") {
+        $(" #tb_address_register ").css("border", "1px solid red");
+        check++;
+    } 
+    if (check == 0) {
+        var request = $.ajax({
+            url: "PHP/register.php",
+            type: "post",
+            data: {
+                username: document.getElementById("tb_user_register").value,
+                name: document.getElementById("tb_name_register").value,
+                email: document.getElementById("tb_email_register").value,
+                pw: document.getElementById("tb_pw_register").value,
+                address: document.getElementById("tb_address_register").value,
+                phone: document.getElementById("tb_phone_register").value,
+                description: document.getElementById("tb_description_register").value
+            }
+        });
+        request.done(function (response, textStatus, jqXHR) {
+            if (response != "true") {
+                $("#registrationfailedalert").show();
+                setTimeout(function () {
+                    $("#registrationfailedalert").hide();
+                }, 3000); 
+            }
+            else {
                 $("#registrationfailedalert").hide();
-            }, 3000); 
-        }
-        else {
-            $("#registrationfailedalert").hide();
-            $("#registrationsuccessalert").show()
-            setTimeout(function () {
-                $("#registrationmodal").modal("hide");
-                $("#registrationsuccessalert").hide();
-                document.getElementById("tb_user_register").value = "";
-                document.getElementById("tb_name_register").value = "";
-                document.getElementById("tb_email_register").value = "";
-                document.getElementById("tb_pw_register").value = "";
-                document.getElementById("tb_address_register").value = "";
-                document.getElementById("tb_phone_register").value = "";
-                document.getElementById("tb_description_register").value = "";
-                document.getElementById("navbarbtn1").innerHTML = "Meine Produkte";
-                document.getElementById("navbarbtn2").innerHTML = "Suchen";
-                document.getElementById("navbarbtn3").innerHTML = "Profil";
-                document.getElementById("navbarbtn4").innerHTML = "Logout";
-                buttonclick("Profil");
-            }, 1000);
-        }
-    });
+                $("#registrationsuccessalert").show()
+                setTimeout(function () {
+                    $("#registrationmodal").modal("hide");
+                    $("#registrationsuccessalert").hide();
+                    document.getElementById("tb_user_register").value = "";
+                    document.getElementById("tb_name_register").value = "";
+                    document.getElementById("tb_email_register").value = "";
+                    document.getElementById("tb_pw_register").value = "";
+                    document.getElementById("tb_address_register").value = "";
+                    document.getElementById("tb_phone_register").value = "";
+                    document.getElementById("tb_description_register").value = "";
+                    document.getElementById("navbarbtn1").innerHTML = "Meine Produkte";
+                    document.getElementById("navbarbtn2").innerHTML = "Suchen";
+                    document.getElementById("navbarbtn3").innerHTML = "Profil";
+                    document.getElementById("navbarbtn4").innerHTML = "Logout";
+                    buttonclick("Profil");
+                }, 1000);
+            }
+        });
+    }
 }
 
 function login() {
@@ -171,6 +200,12 @@ function changePassword() {
         $("#newpasswordfailedalert").show();
         setTimeout(function () {
             $("#newpasswordfailedalert").hide();
+        }, 2000);
+    }
+    else if ((new_pw == "") || (repeat_pw == "")) {
+        $("#emptypasswordfailedalert").show();
+        setTimeout(function () {
+            $("#emptypasswordfailedalert").hide();
         }, 2000);
     }
     else {

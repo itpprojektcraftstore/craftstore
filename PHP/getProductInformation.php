@@ -16,7 +16,7 @@
     $address = $result[3];
     mysqli_close($db_connect);
     
-    echo $name."|".$productname."|".$price."|".$description."|".$email."|".$phone."|".$address;
+    echo $username."|".$name."|".$productname."|".$price."|".$description."|".$email."|".$phone."|".$address;
 
 	exit();
 ?>

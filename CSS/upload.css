@@ -65,7 +65,7 @@ main {
     margin-bottom: 50px;
 }
 
-#profilbild {
+#profilbild, #img_show_profil{
     width: 200px;
     height: 200px;
 }
@@ -76,4 +76,20 @@ main {
 
 #navbarbtn2 {
     border-bottom: 2px solid rgb(51,122,183);
+}
+
+.alert {
+    margin-top: 20px;
+}
+
+#bt_new_product {
+    width: 180px;
+    height: 180px;
+    margin-top: 60px;
+    margin-left: 60px;
+}
+
+#show_product_username {
+    cursor: pointer;
+    cursor: hand;
 }
