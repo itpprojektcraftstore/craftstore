@@ -1,7 +1,7 @@
 
 $(document).ready(function () {
 
-    generateMain();
+    buttonclick("Suchen");
 
     //File-Upload
     $("#form_upload").submit(function () {
