@@ -28,7 +28,7 @@
         $result = mysqli_query($db_connect, $query);
         $result = mysqli_fetch_array($result);
         $nr = $result[0];
-        $type = $result[1];
+        $old_type = $result[1];
 
         $file = $_FILES["file_profil"]; //file_profil ... name attribut in HTML
         $filename = $file["name"];
@@ -50,7 +50,7 @@
         }
         $sourcePath = $file["tmp_name"];
             
-        $deletePath = "../Uploads/".$username."/ProfilProfilProfilbild".$nr.$type;
+        $deletePath = "../Uploads/".$username."/ProfilProfilProfilbild".$nr.$old_type;
         unlink($deletePath); //altes Profilbild löschen
 
         $dot_pos = strrpos($filename, ".");
