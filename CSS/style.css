@@ -1,3 +1,5 @@
+	 
+
 	 .whitebluebutton{
 		margin: 8px 0px 8px 1px;  
 		background-color: white;
@@ -75,6 +77,10 @@
 	.icon-bar .navbar-toggle .navbar-inverse{
 		background-color: rgb(51,122,183);
 		border-color: rgb(51,122,183);
+	}
+
+	#profilbild{
+		
 	}
 
 	.row{
