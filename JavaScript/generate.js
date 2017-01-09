@@ -7,15 +7,20 @@ function generateMain() {
         var dataArray = response.split('|');
         var repeat = (dataArray.length - 1) / 2;
         
-        var content = "<div class=\"row\">";
-        for (i = 0; i < repeat; i++) {
-            content += "<div class=\"col-xs-12 col-sm-6 col-md-4\">";
-            content += ("<img src=\"Uploads/" + (dataArray[i * 2]) + "/" + (dataArray[i * 2 + 1]) + "\" onclick=\"showMyProduct(this.src)\" class=\"pics_main\">");
-            content += "</div>"
-        }
+        var content = " <div class=\"container\">";          
+        content += "<div class=\"vertical-center-row\">";
+        content += "<div align=\"center\">";
         content += "<div class=\"col-xs-12 col-sm-6 col-md-4\">";
-        content += "<input type=\"image\" src=\"Images/website_img/uploadbtn.png\" onclick=\"buttonclick('Upload');\" id=\"bt_new_product\" data-toggle=\"modal\" >";
+        content += "<input class=\"pics_main\" type=\"image\" src=\"Images/website_img/uploadbtn.png\" onclick=\"buttonclick('Upload');\" id=\"bt_new_product\" data-toggle=\"modal\" >";
         content += "</div>"
+
+            for (i = 0; i < repeat; i++) {
+                content += "<div class=\"col-xs-12 col-sm-6 col-md-4\">";
+                content += ("<img src=\"Uploads/" + (dataArray[i * 2]) + "/" + (dataArray[i * 2 + 1]) + "\" onclick=\"showMyProduct(this.src)\" class=\"pics_main\">");
+                content += "</div>"
+            }
+        content += "</div>"       
+        content += "</div>"    
         content += "</div>"
         document.getElementsByTagName("main")[0].innerHTML = content;
     });
@@ -69,13 +74,17 @@ function generateProducts(categorie) {
             srcArray[index] = tmp;
         }
 
-        content = "<div class=\"row\">";
+        content = " <div class=\"container\">";          
+        content += "<div class=\"vertical-center-row\">";
+        content += " <div align=\"center\">";
         for (i = 0; i < userArray.length; i++) {
             content += "<div class=\"col-xs-12 col-sm-6 col-md-4\">";
             content += ("<img src=\"Uploads/" + userArray[i] + "/" + srcArray[i] + "\" onclick=\"showProduct(this.src)\" class=\"pics_main\">");
-            content += "</div>"
-        }
-        content += "</div>"
+            content += "</div>";
+        } 
+        content += "</div>";
+        content += "</div>";
+        content += "</div>";
         document.getElementsByTagName("main")[0].innerHTML = content;
     });
 }
@@ -96,9 +105,6 @@ function showProduct(src) {
         document.getElementById("show_product_productname").innerHTML = dataArray[2];
         document.getElementById("div_show_product_price").innerHTML = dataArray[3];
         document.getElementById("div_show_product_description").innerHTML = dataArray[4];
-        document.getElementById("div_show_product_email").innerHTML = dataArray[5];
-        document.getElementById("div_show_product_phone").innerHTML = dataArray[6];
-        document.getElementById("div_show_product_address").innerHTML = dataArray[7];
         $("#produktmodal").modal("show");
     });
 }
