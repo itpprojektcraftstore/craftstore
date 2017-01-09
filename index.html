@@ -315,18 +315,18 @@ required></textarea>
 
 			<div class="modal-body">
 				<div>
-					Username d. Verkäufers: <br><a id="show_product_username" onclick="show_profile(this.innerHTML)"></a>
-<br><br> Verkäufer:
-<div id="div_show_product_name"></div>
-<br> Preis:
-<div id="div_show_product_price"></div>
-<br> Produktbeschreibung:
-<div id="div_show_product_description"></div>
-</div>
-</div>
-</div>
-</div>
-</div>
+					Username: <br><a id="show_product_username" onclick="show_profile(this.innerHTML)"></a>
+			<br><br> Verkäufer:
+			<div id="div_show_product_name"></div>
+			<br> Preis:
+			<div id="div_show_product_price"></div>
+			<br> Produktbeschreibung:
+			<div id="div_show_product_description"></div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
 
 <!--popup für eigene Produkte ansehen/bearbeiten -->
 <div class="modal fade" id="meinproduktmodal" role="dialog">
@@ -357,31 +357,31 @@ required></textarea>
 							</select> <br><br>
 						<input type="text" class="form-control" id="tb_myproduct_price" name="myproduct_price" placeholder="Preis (€)" /><br>
 						<textarea onkeydown="setlength('myproduct')" onkeyup="setlength('myproduct')" onkeypress="setlength('myproduct')" class="form-control desc" rows="3" maxlength="250" id="tb_myproduct_description" name="myproduct_description" placeholder="Produktbeschreibung"
-required></textarea>
-<p id="descr_length_myproduct" class="pull-right">0/250</p>
-<div id="div_preview_myproduct" class="div_preview"><img id="img_preview_myproduct" class="img_preview img-circle" /></div>
-<div class="div_upload_buttons">
-	<label class="btn btn-default btn-file" id="bt_browse_myproduct">
-									Browse...
-									<input type="file" name="file_myproduct" id="file_myproduct" required>
-								</label>
-	<input type="submit" class="btn btn-default" value="Aktualisieren" id="bt_upload_myproduct" />
-	<input type="button" class="btn btn-danger" value="Produkt löschen" id="bt_delete_myproduct" />
-</div>
-</form>
-<div class="alert alert-success collapse" role="alert" id="myproductsuccessalert">
-	<strong>Erfolgreich geändert!</strong>
-</div>
-<div class="alert alert-danger collapse" role="alert" id="myproductfailedalert1">
-	<strong>Falsches Format!</strong>
-</div>
-<div class="alert alert-danger collapse" role="alert" id="myproductfailedalert2">
-	<strong>Bild wurde bereits verwendet!</strong>
-</div>
-</div>
-</div>
-</div>
-</div>
+					required></textarea>
+					<p id="descr_length_myproduct" class="pull-right">0/250</p>
+					<div id="div_preview_myproduct" class="div_preview"><img id="img_preview_myproduct" class="img_preview img-circle" /></div>
+					<div class="div_upload_buttons">
+						<label class="btn btn-default btn-file" id="bt_browse_myproduct">
+														Browse...
+														<input type="file" name="file_myproduct" id="file_myproduct" required>
+													</label>
+						<input type="submit" class="btn btn-default" value="Aktualisieren" id="bt_upload_myproduct" />
+						<input type="button" class="btn btn-danger" value="Produkt löschen" id="bt_delete_myproduct" />
+					</div>
+					</form>
+					<div class="alert alert-success collapse" role="alert" id="myproductsuccessalert">
+						<strong>Erfolgreich geändert!</strong>
+					</div>
+					<div class="alert alert-danger collapse" role="alert" id="myproductfailedalert1">
+						<strong>Falsches Format!</strong>
+					</div>
+					<div class="alert alert-danger collapse" role="alert" id="myproductfailedalert2">
+						<strong>Bild wurde bereits verwendet!</strong>
+					</div>
+					</div>
+					</div>
+					</div>
+					</div>
 </div>
 
 <!--popup für passwort ändern -->
@@ -431,39 +431,34 @@ required></textarea>
 			</div>
 
 			<div class="modal-body">
-				
- 			<div class="vertical-center-row">
-                 <div align="center">
-				<div class="col-xs-12 col-sm-9 col-md-9">
-				<img id="img_show_profil" class="img-circle">
-				</div>
-				<div class="col-xs-12 col-sm-3 col-md-3">
-					<div style="text-align: center;">
-                            <div style="display: inline-block; text-align: left">
-								Name:
-								<p id="show_profil_name"></p>
-								E-Mail:
-								<p id="show_profil_email"></p>
-								Adresse:
-								<p id="show_profil_adresse"></p>
-								Telefonnummer:
-								<p id="show_profil_phone"></p>
-								Profilbeschreibung:
-								<p id="show_profil_description"></p>
-							</div> 
+				<div class="vertical-center-row">
+					<div align="center">
+						<div class="col-xs-12 col-sm-9 col-md-9">
+							<img id="img_show_profil" class="img-circle">
 						</div>
-            	</div>
-          	</div>
-		  
-          </div>
-
-					
-					
-				
+						<div class="col-xs-12 col-sm-3 col-md-3">
+							<div style="text-align: center;">
+									<div style="display: inline-block; text-align: left">
+										<br>
+										Name:
+										<p id="show_profil_name"></p>
+										E-Mail:
+										<p id="show_profil_email"></p>
+										Adresse:
+										<p id="show_profil_adresse"></p>
+										Telefonnummer:
+										<p id="show_profil_phone"></p>
+										Profilbeschreibung:
+										<p id="show_profil_description"></p>
+									</div> 
+								</div>  
+						</div>
+          			</div>
+				</div>	 
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
 
 </body>
 

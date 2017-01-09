@@ -1,11 +1,13 @@
 		
 		#h4{
-			 text-align: left;
+			text-align: left;	 
 		}
 		
-		html, body, .container {
-			height: 100%;
+		#profilbuttondiv{
+			 margin-bottom:50px;
+			 margin-top:0px;
 		}
+
 		.container {
 			display: table;
 			vertical-align: middle;
@@ -110,6 +112,16 @@
 	}
 
 
+	textarea {
+   		resize: none;
+		word-wrap: break-word;	
+	}
+
+	div{
+		word-wrap:break-word;
+	}
+
+
 	@media only screen and (max-width: 365px) {
 
 		#navbarlogo{
@@ -132,4 +144,4 @@
 		#navbarlogo{ 
 			 margin-top:5%;
 		}	 
-	}
+	} 

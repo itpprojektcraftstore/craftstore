@@ -103,7 +103,12 @@ function showProduct(src) {
         document.getElementById("show_product_username").innerHTML = dataArray[0];
         document.getElementById("div_show_product_name").innerHTML = dataArray[1];
         document.getElementById("show_product_productname").innerHTML = dataArray[2];
-        document.getElementById("div_show_product_price").innerHTML = dataArray[3];
+        if (dataArray[3].includes('€')){
+            document.getElementById("div_show_product_price").innerHTML = dataArray[3];
+        }
+        else{            
+            document.getElementById("div_show_product_price").innerHTML = dataArray[3]+"€";
+        }
         document.getElementById("div_show_product_description").innerHTML = dataArray[4];
         $("#produktmodal").modal("show");
     });
@@ -123,7 +128,13 @@ function showMyProduct(src) {
         var dataArray = response.split('|');
         document.getElementById("tb_myproduct_name").value = dataArray[0];
         document.getElementById("tb_myproduct_category_old").value = dataArray[1];
-        document.getElementById("tb_myproduct_price").value = dataArray[2];
+         
+        if (dataArray[2].includes('€')){            
+             document.getElementById("tb_myproduct_price").value = dataArray[2];
+        }
+        else{                       
+            document.getElementById("tb_myproduct_price").value = dataArray[2]+"€";
+        }
         document.getElementById("tb_myproduct_description").innerHTML = dataArray[3];
         setlength('myproduct');
 
