@@ -63,6 +63,7 @@ main {
 
 #profilbeschreibung {
     margin-bottom: 50px;
+    max-width: 300px;
 }
 
 #profilbild, #img_show_profil{
