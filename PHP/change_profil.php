@@ -34,6 +34,8 @@
         $filename = $file["name"];
 
         if ($filename == "") {
+            $query = "UPDATE user SET Name = '$name', Email = '$email', Adresse = '$address', Telefonnummer = '$phone', Profilbeschreibung = '$description' WHERE Username = '$username'";
+            mysqli_query($db_connect, $query);
             mysqli_close($db_connect);
             echo "true";
 	        exit();
