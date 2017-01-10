@@ -66,6 +66,10 @@ main {
     max-width: 300px;
 }
 
+#show_profil_description{
+    max-width: 300px;
+}
+
 #profilbild, #img_show_profil{
     width: 200px;
     height: 200px;
