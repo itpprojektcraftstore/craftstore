@@ -1,3 +1,23 @@
+		
+		#h4{
+			text-align: left;	 
+		}
+		
+		#profilbuttondiv{
+			 margin-bottom:50px;
+			 margin-top:0px;
+		}
+
+		.container {
+			display: table;
+			vertical-align: middle;
+		}
+		.vertical-center-row {
+			display: table-cell;
+			vertical-align: middle;
+		} 
+ 
+
 	 .whitebluebutton{
 		margin: 8px 0px 8px 1px;  
 		background-color: white;
@@ -54,8 +74,6 @@
 	#navbarbtn2{
 		padding: 8px;
 		width: 65px;
-		border: 1px;
-		border-color: rgb(51,122,183);
 	}	
 
 	#bt_login,#bt_register{
@@ -77,6 +95,10 @@
 		border-color: rgb(51,122,183);
 	}
 
+	#profilbild{
+		margin-bottom:25px;
+	}
+
 	.row{
 		margin: 0px 1% 0px 1%;
 	}
@@ -87,6 +109,32 @@
 		width:100%;
 	}
 
+
+	textarea {
+   		resize: none;
+		word-wrap: break-word;	
+	}
+
+	div{
+		word-wrap:break-word;
+	}
+
+	@media only screen and (max-width: 768px) {
+		#navbar button{
+			display:block;
+		}
+
+		#navbar{
+		    float:left;	
+		}
+	}
+
+	@media only screen and (min-width: 768px) {
+		#navbar{
+		    float:right;	
+		}
+
+	}
 
 	@media only screen and (max-width: 365px) {
 
@@ -110,4 +158,4 @@
 		#navbarlogo{ 
 			 margin-top:5%;
 		}	 
-	}
+	} 

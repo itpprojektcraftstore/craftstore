@@ -75,7 +75,7 @@ function register() {
                     document.getElementById("tb_phone_register").value = "";
                     document.getElementById("tb_description_register").value = "";
                     document.getElementById("navbarbtn1").innerHTML = "Meine Produkte";
-                    document.getElementById("navbarbtn2").innerHTML = "Suchen";
+                    
                     document.getElementById("navbarbtn3").innerHTML = "Profil";
                     document.getElementById("navbarbtn4").innerHTML = "Logout";
                     buttonclick("Profil");
@@ -110,7 +110,7 @@ function login() {
                 document.getElementById("tb_pw_login").value = "";
                 document.getElementById("tb_username_login").value = "";
                 document.getElementById("navbarbtn1").innerHTML = "Meine Produkte";
-                document.getElementById("navbarbtn2").innerHTML = "Suchen";
+                //
                 document.getElementById("navbarbtn3").innerHTML = "Profil";
                 document.getElementById("navbarbtn4").innerHTML = "Logout";
                 buttonclick("Profil");
@@ -126,11 +126,11 @@ function logout() {
     });
     request.done(function (response, textStatus, jqXHR) {
         document.getElementById("navbarbtn1").innerHTML = "";
-        document.getElementById("navbarbtn2").innerHTML = "Suchen";
+        
         document.getElementById("navbarbtn3").innerHTML = "Registrieren";
         document.getElementById("navbarbtn4").innerHTML = "Login";
         $( "#navbarbtn1" ).css('border-bottom', 'none');
-        $( "#navbarbtn2" ).css('border-bottom', '2px solid rgb(51,122,183)');
+        $( "#navbarbtn2" ).css('border-bottom', 'none');
         $( "#navbarbtn3" ).css('border-bottom', 'none');
         $( "#navbarbtn4" ).css('border-bottom', 'none'); 
         generateProducts("Alle Kategorien");
@@ -145,7 +145,7 @@ function isLoggedin() {
     request.done(function (response, textStatus, jqXHR) {
         if (response == "true") {
             document.getElementById("navbarbtn1").innerHTML = "Meine Produkte";
-            document.getElementById("navbarbtn2").innerHTML = "Suchen";
+            //
             document.getElementById("navbarbtn3").innerHTML = "Profil";
             document.getElementById("navbarbtn4").innerHTML = "Logout";
             buttonclick("Profil");
@@ -178,7 +178,7 @@ function delete_account() {
                 document.getElementById("tb_pw_delete").value = "";
                 document.getElementById("tb_username_delete").value = "";
                 document.getElementById("navbarbtn1").innerHTML = "";
-                document.getElementById("navbarbtn2").innerHTML = "Suchen";
+                
                 document.getElementById("navbarbtn3").innerHTML = "Registrieren";
                 document.getElementById("navbarbtn4").innerHTML = "Login";
                 $( "#navbarbtn1" ).css('border-bottom', 'none');

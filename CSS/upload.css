@@ -1,7 +1,7 @@
 .div_preview {
     width: 250px;
-    height: 250px;
-    border: 1px solid;
+    height: 250px;    
+    border-radius: 125px; 
     position: absolute;
     left: 0;
     right: 0;
@@ -53,9 +53,9 @@ main {
 }
 
 .pics_main {
-    height: 300px;
-    width: 300px;
-    border-radius: 150px;
+    height: 280px;
+    width:  280px;
+    border-radius: 140px;
     margin-bottom: 80px;
     cursor: pointer;
     cursor: hand;
@@ -74,19 +74,14 @@ main {
     width: 130px;
 }
 
-#navbarbtn2 {
-    border-bottom: 2px solid rgb(51,122,183);
-}
-
 .alert {
     margin-top: 20px;
 }
 
 #bt_new_product {
-    width: 180px;
-    height: 180px;
-    margin-top: 60px;
-    margin-left: 60px;
+    height: 250px;
+    width:  250px;
+    margin-bottom: 80px;
 }
 
 #show_product_username {
