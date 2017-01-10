@@ -36,18 +36,25 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-fixed-top bg-primary .navbar-offset">
-				<div class="container-fluid">
-					<a class="navbar-brand" rel="home" href="#" title="CraftStore">
-						<img onclick="buttonclick('Suchen')" id="navbarlogo" style="max-width:100px;" src="Images/website_img/logo2.png">
-		</a>
-		<img onclick="buttonclick('Suchen')" id="navbarlogo2" style="max-width:100px;" src="Images/website_img/icon.png">
-		<div class="btn-div pull-right ">
-			<button class="btn whitebluebutton" id="navbarbtn1" data-toggle="modal" type="button"></button>
-			<!--<button class="btn whitebluebutton" id="navbarbtn2" data-toggle="modal" type="button">Suchen</button>-->
-			<button class="btn whitebluebutton" id="navbarbtn3" data-toggle="modal" type="button">Registrieren</button>
-			<button class="btn whitebluebutton" id="navbarbtn4" data-toggle="modal" type="button">Login</button>
-		</div>
+	<nav class=" navbar-default navbar-fixed-top bg-primary .navbar-offset">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" rel="home" href="#" title="CraftStore">
+					<img onclick="buttonclick('Suchen')" id="navbarlogo" style="max-width:100px;" src="Images/website_img/logo2.png">
+				</a>
+				<img onclick="buttonclick('Suchen')" id="navbarlogo2" style="max-width:100px;" src="Images/website_img/icon.png">
+				<button type="button" id="navbartoggle" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="btn-div collapse navbar-collapse" id="navbar">
+				<button class="btn whitebluebutton" id="navbarbtn1" data-toggle="modal" type="button"></button>
+				<!--<button class="btn whitebluebutton" id="navbarbtn2" data-toggle="modal" type="button">Suchen</button>-->
+				<button class="btn whitebluebutton" id="navbarbtn3" data-toggle="modal" type="button">Registrieren</button>
+				<button class="btn whitebluebutton" id="navbarbtn4" data-toggle="modal" type="button">Login</button>
+			</div>
 		</div>
 
 		<div class="container categories">

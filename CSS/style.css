@@ -74,8 +74,6 @@
 	#navbarbtn2{
 		padding: 8px;
 		width: 65px;
-		border: 1px;
-		border-color: rgb(51,122,183);
 	}	
 
 	#bt_login,#bt_register{
@@ -121,6 +119,22 @@
 		word-wrap:break-word;
 	}
 
+	@media only screen and (max-width: 768px) {
+		#navbar button{
+			display:block;
+		}
+
+		#navbar{
+		    float:left;	
+		}
+	}
+
+	@media only screen and (min-width: 768px) {
+		#navbar{
+		    float:right;	
+		}
+
+	}
 
 	@media only screen and (max-width: 365px) {
 
