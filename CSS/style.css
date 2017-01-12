@@ -145,7 +145,7 @@
 		#navbarlogo2{
 			 width: 35px;
 			 height: 35px; 
-			 margin-top:5%;
+			 margin-top:7.7px;
 			 margin-left:0;
 		}	 
 	}
@@ -153,9 +153,5 @@
 	@media only screen and (min-width: 365px) {
 		 #navbarlogo2{
 			 display: none;
-		 }
-		 
-		#navbarlogo{ 
-			 margin-top:5%;
-		}	 
+		 }		 
 	} 
