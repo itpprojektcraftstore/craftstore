@@ -89,9 +89,9 @@ function generateProducts(categorie) {
     });
 }
 
-function showProduct(src) {
-    var startIndex = src.lastIndexOf("/") + 1;
-    src = src.substr(startIndex);
+function showProduct(src_complete) {
+    var startIndex = src_complete.lastIndexOf("/") + 1;
+    src = src_complete.substr(startIndex);
 
     var request = $.ajax({
         url: "PHP/getProductInformation.php",
@@ -105,6 +105,7 @@ function showProduct(src) {
         document.getElementById("show_product_productname").innerHTML = dataArray[2];
         document.getElementById("div_show_product_price").innerHTML = dataArray[3]; 
         document.getElementById("div_show_product_description").innerHTML = dataArray[4];
+        $(" #img_show_product ").attr('src', src_complete);
         $("#produktmodal").modal("show");
     });
 }
