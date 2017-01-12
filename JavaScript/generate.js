@@ -177,7 +177,8 @@ function show_change_profil() {
     });
 }
 
-function show_profile(username) {
+function show_profile() {
+    var username = document.getElementById("show_product_username").innerHTML;
     var request = $.ajax({
         url: "PHP/getMoreProfilInformation.php",
         type: "post",
