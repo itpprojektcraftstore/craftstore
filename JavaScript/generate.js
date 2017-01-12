@@ -100,8 +100,8 @@ function showProduct(src) {
     });
     request.done(function (response, textStatus, jqXHR) {
         var dataArray = response.split('|');
-        document.getElementById("show_product_username").innerHTML = dataArray[0];
-        document.getElementById("div_show_product_name").innerHTML = dataArray[1];
+        document.getElementById("div_show_product_username").innerHTML = dataArray[0];
+        document.getElementById("show_product_name").innerHTML = dataArray[1];
         document.getElementById("show_product_productname").innerHTML = dataArray[2];
         document.getElementById("div_show_product_price").innerHTML = dataArray[3]; 
         document.getElementById("div_show_product_description").innerHTML = dataArray[4];
@@ -167,7 +167,7 @@ function show_change_profil() {
 }
 
 function show_profile() {
-    var username = document.getElementById("show_product_username").innerHTML;
+    var username = document.getElementById("div_show_product_username").innerHTML;
     var request = $.ajax({
         url: "PHP/getMoreProfilInformation.php",
         type: "post",
