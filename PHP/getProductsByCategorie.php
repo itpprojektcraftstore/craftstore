@@ -19,8 +19,7 @@
         $session_name = $data[2]."Name";
         $_SESSION[$session_name] = $data[1];
 
-        $session_name = $data[2]."Preis";
-        //if($data[3] != "---") {$data[3] = $data[3].'€'; }
+        $session_name = $data[2]."Preis"; 
         $_SESSION[$session_name] = $data[3];
 
         $session_name = $data[2]."Beschreibung";
