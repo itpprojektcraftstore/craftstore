@@ -7,6 +7,9 @@ $(document).ready(function () {
     $("#categoriedropdown").click(function() { buttonclick("dropdown"); });
     $("#bt_change_password").click(function() { changePassword(); });
     $("#bt_delete_myproduct").click(function() { delete_product(); });
+    $('.navbar-collapse button').click(function() {
+        $('.navbar-toggle:visible').click();
+    });
 });
 
 function buttonclick(value)
