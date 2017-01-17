@@ -179,6 +179,7 @@ function show_profile() {
         document.getElementById("show_profile_username").innerHTML = dataArray[0];
         document.getElementById("show_profil_name").innerHTML = dataArray[1];
         document.getElementById("show_profil_email").innerHTML = dataArray[2];
+        document.getElementById("show_profil_email").href = 'mailto:' + dataArray[2] + '?subject=Craftstore Anfrage';
         document.getElementById("show_profil_adresse").innerHTML = dataArray[3];
         document.getElementById("show_profil_phone").innerHTML = dataArray[4];
         document.getElementById("show_profil_description").innerHTML = dataArray[5];
