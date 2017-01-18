@@ -1,7 +1,10 @@
+	 
+	
 	#no_product_found{
 		color: rgb(51,122,183);
 	}
 	
+
 	#h4{
 		text-align: left;	
 	}
@@ -66,8 +69,13 @@
 
 	#navbarbtn1{
 		padding: 8px;
-		width: 100px; 
+		width: 100px;
+		display:none;
 	}
+
+	#navbarbtn1[data-content="Meine Produkte"] {
+		display:inline-block;
+	} 
 	
 	.btn-div{
 		margin-top:1%;
