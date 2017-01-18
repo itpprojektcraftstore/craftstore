@@ -51,41 +51,46 @@ function generateProducts(categorie) {
     });
     request.done(function (response, textStatus, jqXHR) {
         var dataArray = response.split('|');
-        var userArray = [ ], srcArray = [ ];
-        var repeat = (dataArray.length-1)/2;
-        for (i = 0; i < repeat; i++) {
-            userArray[i] = dataArray[i * 2];
-            srcArray[i] = dataArray[i * 2 + 1];
+        if (dataArray.length == 1) {
+            document.getElementsByTagName("main")[0].innerHTML = "<h1 id=\"no_product_found\">Keine Produkte gefunden!</h1>";
         }
+        else {
+            var userArray = [ ], srcArray = [ ];
+            var repeat = (dataArray.length-1)/2;
+            for (i = 0; i < repeat; i++) {
+                userArray[i] = dataArray[i * 2];
+                srcArray[i] = dataArray[i * 2 + 1];
+            }
 
-        //shuffle
-        var index, tmp, counter = userArray.length;
-        while (counter > 0) {
-            index = Math.floor(Math.random() * counter); // Pick a random index
-            counter--;
+            //shuffle
+            var index, tmp, counter = userArray.length;
+            while (counter > 0) {
+                index = Math.floor(Math.random() * counter); // Pick a random index
+                counter--;
 
-            //swaps the elements
-            tmp = userArray[counter];
-            userArray[counter] = userArray[index];
-            userArray[index] = tmp;
+                //swaps the elements
+                tmp = userArray[counter];
+                userArray[counter] = userArray[index];
+                userArray[index] = tmp;
 
-            tmp = srcArray[counter];
-            srcArray[counter] = srcArray[index];
-            srcArray[index] = tmp;
-        }
+                tmp = srcArray[counter];
+                srcArray[counter] = srcArray[index];
+                srcArray[index] = tmp;
+            }
 
-        content = " <div class=\"container\">";          
-        content += "<div class=\"vertical-center-row\">";
-        content += " <div align=\"center\">";
-        for (i = 0; i < userArray.length; i++) {
-            content += "<div class=\"col-xs-12 col-sm-6 col-md-4\">";
-            content += ("<img src=\"Uploads/" + userArray[i] + "/" + srcArray[i] + "\" onclick=\"showProduct(this.src)\" class=\"pics_main\">");
+            content = " <div class=\"container\">";          
+            content += "<div class=\"vertical-center-row\">";
+            content += " <div align=\"center\">";
+            for (i = 0; i < userArray.length; i++) {
+                content += "<div class=\"col-xs-12 col-sm-6 col-md-4\">";
+                content += ("<img src=\"Uploads/" + userArray[i] + "/" + srcArray[i] + "\" onclick=\"showProduct(this.src)\" class=\"pics_main\">");
+                content += "</div>";
+            } 
             content += "</div>";
-        } 
-        content += "</div>";
-        content += "</div>";
-        content += "</div>";
-        document.getElementsByTagName("main")[0].innerHTML = content;
+            content += "</div>";
+            content += "</div>";
+            document.getElementsByTagName("main")[0].innerHTML = content;
+        }
     });
 }
 
