@@ -127,6 +127,13 @@
     	cursor: hand;
 	}
 
+	footer p {
+		display: inline;
+		margin: 0 0 0 0;
+		float: right;
+		color: white;
+	}
+
 	@media only screen and (max-width: 768px) {
 		#navbar button{
 			display:block;
