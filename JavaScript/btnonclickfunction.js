@@ -92,6 +92,9 @@ function buttonclick(value)
         document.getElementById("tb_change_passowrd_repeat").value = "";
         $("#changepasswordmodal").modal("show");
     }
+    else if(value=='Impressum') {
+         $("#impressummodal").modal("show");
+    }
 }
 
 function categorieclick(value){
