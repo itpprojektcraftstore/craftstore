@@ -52,7 +52,7 @@ function generateProducts(categorie) {
     request.done(function (response, textStatus, jqXHR) {
         var dataArray = response.split('|');
         if (dataArray.length == 1) {
-            document.getElementsByTagName("main")[0].innerHTML = "<h1 id=\"no_product_found\">Keine Produkte gefunden</h1>";
+            document.getElementsByTagName("main")[0].innerHTML = "<h1 id=\"no_product_found\">Keine Produkte gefunden!</h1>";
         }
         else {
             var userArray = [ ], srcArray = [ ];
