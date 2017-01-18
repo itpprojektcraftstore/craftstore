@@ -121,6 +121,12 @@
 		background-color: rgb(51,122,183);
 	}
 
+	footer a {
+		color: white;
+		cursor: pointer;
+    	cursor: hand;
+	}
+
 	@media only screen and (max-width: 768px) {
 		#navbar button{
 			display:block;
