@@ -110,7 +110,7 @@ function login() {
                 document.getElementById("tb_pw_login").value = "";
                 document.getElementById("tb_username_login").value = "";
                 document.getElementById("navbarbtn1").innerHTML = "Meine Produkte";
-                //---------überall wo meine produkte steht bearbeiten--------
+                 document.getElementById("navbarbtn1").style.display="inline-block";
                 document.getElementById("navbarbtn3").innerHTML = "Profil";
                 document.getElementById("navbarbtn4").innerHTML = "Logout";
                 buttonclick("Profil");
@@ -125,8 +125,8 @@ function logout() {
         type: "post"
     });
     request.done(function (response, textStatus, jqXHR) {
-        document.getElementById("navbarbtn1").innerHTML = "";
-        
+        document.getElementById("navbarbtn1").innerHTML = ""; 
+        document.getElementById("navbarbtn1").style.display="none";
         document.getElementById("navbarbtn3").innerHTML = "Registrieren";
         document.getElementById("navbarbtn4").innerHTML = "Login";
         $( "#navbarbtn1" ).css('border-bottom', 'none');

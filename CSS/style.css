@@ -69,14 +69,10 @@
 
 	#navbarbtn1{
 		padding: 8px;
-		width: 100px;
-		display:none;
+		width: 100px; 
+		display: none;
 	}
-
-	#navbarbtn1[data-content="Meine Produkte"] {
-		display:inline-block;
-	} 
-	
+ 
 	.btn-div{
 		margin-top:1%;
 	}
@@ -159,6 +155,9 @@
 	@media only screen and (min-width: 768px) {
 		#navbar{
 		    float:right;	
+		}
+		#navbar button{
+			display:inline;
 		}
 
 	}
