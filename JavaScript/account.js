@@ -148,7 +148,7 @@ function isLoggedin() {
             //
             document.getElementById("navbarbtn3").innerHTML = "Profil";
             document.getElementById("navbarbtn4").innerHTML = "Logout";
-            buttonclick("Profil");
+            generateProducts("Alle Kategorien");
         }
     });
 }
