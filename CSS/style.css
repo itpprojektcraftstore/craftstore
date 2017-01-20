@@ -67,6 +67,7 @@
 		width:100%;
 	}
 
+<<<<<<< HEAD
 	#navbarbtn1{ 
 		width: 100px; 
 		display: none;
@@ -76,6 +77,17 @@
 		margin-top:1%;
 	}
  
+=======
+	#navbarbtn1{
+		width: 100px; 
+		display: none;
+	}
+
+	#navbarbtn2{
+		padding: 8px;
+		width: 65px;
+	}	
+>>>>>>> d3c3f8f4e2b72a593aad2e1e04f31067c000f3fb
 
 	#bt_login,#bt_register{
 		width: 100%;
