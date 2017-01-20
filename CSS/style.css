@@ -67,20 +67,15 @@
 		width:100%;
 	}
 
-	#navbarbtn1{
-		padding: 8px;
+	#navbarbtn1{ 
 		width: 100px; 
 		display: none;
-	}
- 
+	} 
+
 	.btn-div{
 		margin-top:1%;
 	}
-
-	#navbarbtn2{
-		padding: 8px;
-		width: 65px;
-	}	
+ 
 
 	#bt_login,#bt_register{
 		width: 100%;
@@ -127,6 +122,9 @@
 
 	footer{
 		background-color: rgb(51,122,183);
+		height: 35px;
+		font-weight: bold;
+		padding: 10px;
 	}
 
 	footer a {
