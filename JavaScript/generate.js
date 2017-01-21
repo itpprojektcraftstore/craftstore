@@ -33,7 +33,7 @@ function generateProfil() {
     });
     request.done(function (response, textStatus, jqXHR) {
         var dataArray = response.split('|');
-        document.getElementById("username").innerHTML = "Username: "+dataArray[0];
+        document.getElementById("username").innerHTML = "Benutzername: "+dataArray[0];
         document.getElementById("name").innerHTML = "Name: "+dataArray[1];
         document.getElementById("email").innerHTML = "E-Mail : "+dataArray[2];
         document.getElementById("adresse").innerHTML = "Adresse: "+dataArray[3];
