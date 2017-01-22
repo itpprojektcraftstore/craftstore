@@ -40,7 +40,7 @@
     display: none;
 }
 
-#uploadsuccessalert, #uploadinfoalert{
+#uploadinfoalert{
     margin-top: -190px;
     position:absolute;
     left: 0;
