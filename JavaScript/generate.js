@@ -33,12 +33,12 @@ function generateProfil() {
     });
     request.done(function (response, textStatus, jqXHR) {
         var dataArray = response.split('|');
-        document.getElementById("username").innerHTML = "Benutzername: "+dataArray[0];
-        document.getElementById("name").innerHTML = "Name: "+dataArray[1];
-        document.getElementById("email").innerHTML = "E-Mail : "+dataArray[2];
-        document.getElementById("adresse").innerHTML = "Adresse: "+dataArray[3];
-        document.getElementById("telefonnummer").innerHTML = "Telefonnummer: "+dataArray[4];
-        document.getElementById("profilbeschreibung").innerHTML = "Profilbeschreibung: "+dataArray[5];
+        document.getElementById("username").innerHTML = "<b>Benutzername:</b> "+dataArray[0];
+        document.getElementById("name").innerHTML = "<b>Name:</b> "+dataArray[1];
+        document.getElementById("email").innerHTML = "<b>E-Mail :</b> "+dataArray[2];
+        document.getElementById("adresse").innerHTML = "<b>Adresse:</b> "+dataArray[3];
+        document.getElementById("telefonnummer").innerHTML = "<b>Telefonnummer:</b> "+dataArray[4];
+        document.getElementById("profilbeschreibung").innerHTML = "<b>Profilbeschreibung:</b> "+dataArray[5];
         $(" #profilbild ").attr('src', 'Uploads/'+dataArray[0]+'/ProfilProfilProfilbild'+dataArray[7]+dataArray[6]);
     });
 }
